@@ -48,3 +48,7 @@ In questa giornata ho impostato la struttura del sito e costruito i primi elemen
   Il layout passa a colonne verticali su schermi piccoli per una leggibilità ottimale.
 
 🔗 [Vai alla cartella del giorno 01-10-25](./01-10-25/)
+
+---
+
+
