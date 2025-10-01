@@ -24,8 +24,5 @@ Prima dello sviluppo, è stata realizzata una fase di analisi e progettazione de
 
 ## Wireframe
 
-### Desktop
-![Wireframe Desktop](wireframes/wireframe-desktop.png)
-
-### Mobile
-![Wireframe Mobile](wireframes/wireframe-smartphone.png)
+I wireframe realizzati per desktop e smartphone sono disponibili qui:  
+[Vai alla cartella wireframes](./wireframes)
