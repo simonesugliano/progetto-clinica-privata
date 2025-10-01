@@ -5,7 +5,6 @@ Demo di sito web multipagina per un poliambulatorio privato, con sistema di pren
 
 Il progetto è stato realizzato come esercizio per la **Missione Lavorativa Openjob Front End — Ottobre 2025.
 
----
 
 ## Obiettivi principali
 
@@ -14,18 +13,20 @@ Il progetto è stato realizzato come esercizio per la **Missione Lavorativa Open
 - Salvare e gestire le prenotazioni **senza database**, usando `localStorage`
 - Mantenere un'esperienza utente fluida su **desktop e mobile**
 
----
+
 
 ## Struttura progettuale
 
 Prima dello sviluppo, è stata realizzata una fase di analisi e progettazione dell’interfaccia attraverso **wireframe** desktop e mobile.
 
----
+
 
 ## Wireframe
 
 I wireframe realizzati per desktop e smartphone sono disponibili qui:  
 [Vai alla cartella wireframes](./wireframes)
+
+---
 
 # 01-10-25 – Struttura base del sito e componenti principali
 
