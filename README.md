@@ -1,6 +1,6 @@
 # progetto-clinica-privata
 Sito web demo per un poliambulatorio privato con sistema di prenotazione basato su localStorage
-# 🏥 Progetto Clinica Privata
+# Progetto Clinica Privata
 
 Demo di sito web multipagina per un poliambulatorio privato, con sistema di prenotazione visite basato su `localStorage`.
 
@@ -8,7 +8,7 @@ Il progetto è stato realizzato come esercizio per la **Missione Lavorativa Open
 
 ---
 
-## 🎯 Obiettivi principali
+## Obiettivi principali
 
 - Simulare un sito web moderno e responsive per una clinica privata
 - Permettere all'utente di visualizzare i servizi, scegliere un medico e prenotare una visita
@@ -17,16 +17,16 @@ Il progetto è stato realizzato come esercizio per la **Missione Lavorativa Open
 
 ---
 
-## 🧱 Struttura progettuale
+## Struttura progettuale
 
 Prima dello sviluppo, è stata realizzata una fase di analisi e progettazione dell’interfaccia attraverso **wireframe** desktop e mobile.
 
 ---
 
-## 🖼️ Wireframe
+## Wireframe
 
-### 🖥️ Desktop
+### Desktop
 ![Wireframe Desktop](wireframes/wireframe-desktop.png)
 
-### 📱 Mobile
+### Mobile
 ![Wireframe Mobile](wireframes/wireframe-smartphone.png)
