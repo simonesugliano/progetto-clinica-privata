@@ -1,5 +1,4 @@
-# progetto-clinica-privata
-Sito web demo per un poliambulatorio privato con sistema di prenotazione basato su localStorage
+
 # Progetto Clinica Privata
 
 Demo di sito web multipagina per un poliambulatorio privato, con sistema di prenotazione visite basato su `localStorage`.
