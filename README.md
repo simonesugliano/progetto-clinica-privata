@@ -51,7 +51,7 @@ I wireframe realizzati per desktop e smartphone sono disponibili qui:
 
 ---
 
-# 02-10-25 – Finita Home e costruito pagina servizi offerti dalla struttura
+# 02-10-25 – Terminato Home e costruito pagina servizi offerti dalla struttura
 
 Nella giornata di oggi è stata completata la **homepage**, con particolare attenzione alla resa grafica e alla responsività su più breakpoint.  
 Sono stati curati anche dettagli estetici e funzionali (scroll morbido, spaziature, struttura delle card), per offrire un'esperienza utente fluida e professionale.
@@ -63,5 +63,9 @@ Il layout è pensato per essere facilmente estendibile, mantenendo una struttura
 
 Gli screenshot allegati documentano lo stato attuale del lavoro.
 
- [Vai alla cartella del giorno 01-10-25](./02-10/)
+🔗 [Vai alla cartella del giorno 01-10-25](./02-10/)
+
+---
+
+
 
