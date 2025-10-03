@@ -95,7 +95,7 @@ Il sistema è già pronto per essere collegato alla sezione di prenotazione.
 ---
 
 
-## Stato attuale
+##  Stato attuale
 
 La **pagina degli specialisti** è già operativa nella sua logica base:  
 filtri, testi dinamici e gestione dei reparti funzionano correttamente.  
