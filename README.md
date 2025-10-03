@@ -47,7 +47,7 @@ I wireframe realizzati per desktop e smartphone sono disponibili qui:
   - Logo e copyright
   Il layout passa a colonne verticali su schermi piccoli per una leggibilità ottimale.
 
-🔗 [Vai alla cartella del giorno 01-10-25](./01-10-25/)
+[Vai alla cartella del giorno 01-10-25](./01-10-25/)
 
 ---
 
@@ -63,7 +63,7 @@ Il layout è pensato per essere facilmente estendibile, mantenendo una struttura
 
 Gli screenshot allegati documentano lo stato attuale del lavoro.
 
-🔗 [Vai alla cartella del giorno 01-10-25](./02-10/)
+[Vai alla cartella del giorno 01-10-25](./02-10/)
 
 ---
 
@@ -101,7 +101,7 @@ La **pagina degli specialisti** è già operativa nella sua logica base:
 filtri, testi dinamici e gestione dei reparti funzionano correttamente.  
 La home page è stata aggiornata con sezioni introduttive, maq il focus principale di oggi è stato creare una struttura **chisara e navigabile** per i medici.
 
-🔗 [Vai alla cartella del giorno 01-10-25](./03-10-25/)
+[Vai alla cartella del giorno 01-10-25](./03-10-25/)
 
 ---
 
