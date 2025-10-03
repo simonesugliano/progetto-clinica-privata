@@ -68,4 +68,42 @@ Gli screenshot allegati documentano lo stato attuale del lavoro.
 ---
 
 
+# 03/10/2025 - costruito pagina medici e implementato filtri specialità
+
+Oggi ho lavorato soprattutto sulla **pagina degli specialisti**, portandola ad uno stpato già utilizzabile.  
+L’obiettivo era creare un sistema che permetta all’urtente di **filtrare i medici per specialità**, così da trovare velocemente il professionista di cuiha bisogno.
+
+La pagina ora consente:
+- Di visualizzare i medici suddivisi per disciplina in modo charo e ordinato.
+- Di filtrare dinamicamente i professionisti tramite una **tendina elegante**, senza dover ricaricare la pagina..
+- Di tornare alla lista completa di tutti i medici con un solo clic.
+
+In questo modo, chi arriva da altre sezioni del sito può essere indirizzato subito al reparto di interesse, senza confusione.  
+Il sistema è già pronto per essere collegato alla sezione di prenotazione.
+
+---
+
+## Tecnologie utilizzate
+
+- HTML5 e CSS3
+- [Bootstrap 5.3](https://getbootstrap.com/) per la struttura responsive
+- JavaScript Vanilla per la logica dinamica
+- Font Awesome 6.5 per le icone
+
+*(Le prenotsazioni verranno gestite in seguito tramite LocalStorage.)*
+
+---
+
+
+## ✨ Stato attuale
+
+La **pagina degli specialisti** è già operativa nella sua logica base:  
+filtri, testi dinamici e gestione dei reparti funzionano correttamente.  
+La home page è stata aggiornata con sezioni introduttive, maq il focus principale di oggi è stato creare una struttura **chisara e navigabile** per i medici.
+
+🔗 [Vai alla cartella del giorno 01-10-25](./03-10-25/)
+
+---
+
+
 
