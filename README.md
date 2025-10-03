@@ -101,7 +101,7 @@ La **pagina degli specialisti** è già operativa nella sua logica base:
 filtri, testi dinamici e gestione dei reparti funzionano correttamente.  
 La home page è stata aggiornata con sezioni introduttive, maq il focus principale di oggi è stato creare una struttura **chisara e navigabile** per i medici.
 
-[Vai alla cartella del giorno 01-10-25](./03-10-25/)
+[Vai alla cartella del giorno 03-10-25](./03-10-25/)
 
 ---
 
