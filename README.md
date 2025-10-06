@@ -94,7 +94,6 @@ Il sistema è già pronto per essere collegato alla sezione di prenotazione.
 
 ---
 
-
 ##  Stato attuale
 
 La **pagina degli specialisti** è già operativa nella sua logica base:  
@@ -104,6 +103,41 @@ La home page è stata aggiornata con sezioni introduttive, maq il focus principa
 [Vai alla cartella del giorno 03-10-25](./03-10-25/)
 
 ---
+
+# 06-10-2025 — Completata la pagina dei professionisti, proseguito lo sviluppo della sezione prenotazioni e avviato il collegamento al futuro database Firebase
+
+## Aggiornamenti del progetto
+
+### Sistema di invio email completato
+- Sistemato il **form di contatto** e gli **invii verso la clinica** tramite Formspree.  
+- Implementato un **sistema automatico di conferma email** per l’utente al momento della prenotazione (EmailJS).  
+- Testato e funzionante: viene inviata una mail di riepilogo all’indirizzo inserito nel form.
+
+---
+
+### Pagina Professionisti
+- Pagina completata con **filtri per specialità**, **modali dinamiche** e **descrizioni personalizzate**.  
+- Ogni modale include **foto, informazioni, contatti e form di richiesta visita** con invio automatico.
+
+---
+
+### Pagina Prenotazione
+- Implementata la **logica di selezione** tra specialità, medico, data e ora.  
+- Salvataggio locale dei dati con `localStorage` per simulare un database.  
+- Gestione degli stati dell’interfaccia: disabilitazione campi, reset, alert di conferma e invio email.  
+- Struttura pronta per integrazione futura con **Firebase Firestore**.
+
+---
+
+### Area Riservata (in sviluppo)
+- Avviata la creazione di una sezione dedicata alla **ricerca delle prenotazioni salvate** nel database.  
+- Implementata interfaccia grafica e logica di base con connessione a **Firebase Firestore**.  
+- Attualmente in fase di test: la funzionalità di visualizzazione e cancellazione sarà completata nei prossimi giorni.
+
+---
+[Vai alla cartella del giorno 06-10-25](./06-10/)
+
+**Obiettivo attuale:** consolidare la parte logica delle prenotazioni e completare l’integrazione con Firestore per permettere la gestione completa (creazione, ricerca, cancellazione e conferma via email) delle visite prenotate.
 
 
 
