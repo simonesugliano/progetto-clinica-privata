@@ -137,7 +137,27 @@ La home page è stata aggiornata con sezioni introduttive, maq il focus principa
 ---
 [Vai alla cartella del giorno 06-10-25](./06-10/)
 
+---
+
+# 07-10-2025 — Lavorato alla pagina prenotazione, implementeto funzioni importanti, lavorato al collegamento con database
+
 **Obiettivo attuale:** consolidare la parte logica delle prenotazioni e completare l’integrazione con Firestore per permettere la gestione completa (creazione, ricerca, cancellazione e conferma via email) delle visite prenotate.
 
+## Aggiornamento progetto – Pagina Prenotazioni & Integrazione Database
+
+Oggi ho lavorato in modo approfondito sulla struttura del progetto, portando **quasi a completamento la pagina di prenotazione** del poliambulatorio.
+
+### Lavori svolti
+- Implementata la logica completa di prenotazione, con gestione dinamica di **data e orario tramite librerie esterne (Flatpickr)**.  
+- Lavorato alla funzionalità per **rendere automaticamente non selezionabili gli orari già prenotati**, mipgliorando la coerenza dei dati.  
+- Lavorato al **Collegamento con il database (Firebase)** per l’inserimento e la futura ricerca delle visite salvate.  
+- Rifinita la **veste grafica** genedrale della pagina, mantenendo un design coerente e pulito.  
+- Sistemate le **questioni legali**: aggiunta informativa su **cookie e privacy**, con pagina dedicata e link nel footer.
+
+### Prosssimi passi
+- Ottimizzare la ricerca e la modifica delle prenotazioni salvate.  
+- Effettuare test completi sull’interazione con il database e la gestione errori.
+
+---
 
 
