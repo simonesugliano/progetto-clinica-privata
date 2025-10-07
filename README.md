@@ -159,5 +159,7 @@ Oggi ho lavorato in modo approfondito sulla struttura del progetto, portando **q
 - Effettuare test completi sull’interazione con il database e la gestione errori.
 
 ---
+[Vai alla cartella del giorno 07-10-25](./07-10/)
 
+---
 
