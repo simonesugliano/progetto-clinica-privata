@@ -182,7 +182,7 @@ In parallelo, ho avviato lo sviluppo di una nuova area del sito dedicata agli ap
 - Rifinire i dettagli grafici e responsive della sezione Blog.
 
 ---
-[Vai alla cartella del giorno 08-10-25](./08-10/)
+[Vai alla cartella del giorno 08-10-25](./08/10/)
 
 ---
 
