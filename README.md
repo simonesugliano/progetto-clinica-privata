@@ -163,3 +163,26 @@ Oggi ho lavorato in modo approfondito sulla struttura del progetto, portando **q
 
 ---
 
+# 08-10-2025 — Avanzamento gestione prenotazioni e creazione sezione Blog
+
+**Obiettivo attuale:** ottimizzare la gestione delle prenotazioni salvate e ampliare il progetto con una sezione dedicata ai contenuti informativi, per migliorare la visibilità e il posizionamento SEO del sito.
+
+Oggi ho proseguito il lavoro sulla logica del sistema di prenotazioni, concentrandomi su **ricerca, modifica e aggiornamento delle visite salvate** nel database.  
+In parallelo, ho avviato lo sviluppo di una nuova area del sito dedicata agli approfondimenti medici.
+
+### Lavori svolti
+- Migliorata la **ricerca e modifica delle prenotazioni salvate**, ottimizzando il flusso di aggiornamento dati.  
+- Eseguiti test sull’**interazione con il database**, con particolare attenzione alla gestione degli errori e alla validazione dei dati.  
+- Creata una **nuova pagina “Blog”** per ospitare articoli tematici scritti dai medici, con sistema di apertura tramite **modali dinamiche** e struttura SEO-ready.   
+- Preparata la base per una futura **ottimizzazione on-page** (schema JSON-LD, canonical link, Open Graph).
+
+### Prossimi passi
+- Completare i test finali sul database e ottimizzare il sistema di ricerca prenotazioni.  
+- Finalizzare la **SEO on-page** e aggiungere la mappa JSON-LD per la clinica.  
+- Rifinire i dettagli grafici e responsive della sezione Blog.
+
+---
+[Vai alla cartella del giorno 08-10-25](./08-10/)
+---
+
+
