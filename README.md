@@ -186,4 +186,25 @@ In parallelo, ho avviato lo sviluppo di una nuova area del sito dedicata agli ap
 
 ---
 
+# 09-10-2025 — Completamento sezione Blog e stabilizzazione del sistema prenotazioni
+
+**Obiettivo attuale:** concludere lo sviluppo della sezione Blog e completare i test di stabilità del sistema di gestione prenotazioni, raggiungendo una versione pienamente funzionale e pronta per la fase di ottimizzazione SEO.
+
+Oggi hop terminato la realizzazione della **pagina Blog**,includendo la **selezione per specialità** che consente di filtrare gli articoli in base al reparto medico.  
+In parallelo, ho completato i **test finali sul database Firebase**, verificando il corretto salvatagguio, recupero e cancellazione delle prenotazioni.  
+Il sistema risulta ora **stabile, fluido e completamente operativo**.
+
+### Lavori svolti
+- Completatya la sezione **Blog**, con fltri dinamici per specialità mediche.  
+- Testato e validato il **database Firebase**, assicurando coerenza e stabilità dei dati.  
+- Ottimizzata la **gestione degli errori e dei messaggi di feedback** nelle operazioni utente.  
+
+### Prossimi passi
+- Migliorae la **SEO on-page** e la struttura di indicizzazione (meta, Open Graph, schema JSON-LD).  
+- Aumentare la **visibilità del sito** tramite ricerca e ottimizzazione contenuti.  
+- Effettuare **migliorie grafiche non strutturali**: colori, font, microanimazioni e rifiniture visive.
+
+---
+[Vai alla cartella del giorno 09-10-25](./09-10/)
+
 
