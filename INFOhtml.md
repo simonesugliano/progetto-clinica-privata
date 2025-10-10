@@ -14,7 +14,7 @@ Sono stati utilizzati tag sematici (`header`, `nav`, `section`, `article`, `foot
 - **Meta tag SEO e Open Graph** ottimizzati per ciascuna pagina.  
 - Integrazione con **schema JSON-LD** per migliorare la visibilità sui motori di ricerca.
 
-### 📄 Output finale
+###  Output finale
 Un codice ordinato, validato e perfettamente compatibile con le tecnologie **Bootstrap, Firebase e EmailJS**, garantendo un’ottima base per l’espansione futura del progetto.
 
 ---
