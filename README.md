@@ -5,6 +5,8 @@
 [![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](./INFOfirebase.md)
 [![Hosting AlterVista](https://img.shields.io/badge/Hosting-AlterVista-orange?style=for-the-badge)](./INFOaltervista.md)
 [![Librerie Esterne](https://img.shields.io/badge/Librerie%20Esterne-EmailJS%20%7C%20SweetAlert2%20%7C%20Iubenda-blueviolet?style=for-the-badge)](./INFOlibrerie.md)
+[![Responsive Design](https://img.shields.io/badge/Responsive%20Design-Mobile%20First%20%7C%20Cross%20Browser%20%7C%20SEO%20Ready-009688?style=for-the-badge)](./INFOresponsive.md)
+
 
 # Progetto Clinica Privata
 
