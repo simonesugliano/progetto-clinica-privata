@@ -7,6 +7,8 @@
 [![Librerie Esterne](https://img.shields.io/badge/Librerie%20Esterne-EmailJS%20%7C%20SweetAlert2%20%7C%20Iubenda-blueviolet?style=for-the-badge)](./INFOlibrerie.md)
 [![Responsive Design](https://img.shields.io/badge/Responsive%20Design-Mobile%20First%20%7C%20Cross%20Browser%20%7C%20SEO%20Ready-009688?style=for-the-badge)](./INFOresponsive.md)
 [![SEO Optimization](https://img.shields.io/badge/SEO%20Optimization-Meta%20Tag%20%7C%20Open%20Graph%20%7C%20JSON--LD-4CAF50?style=for-the-badge)](./INFOseo.md)
+[![Prestazioni](https://img.shields.io/badge/Prestazioni-Analisi%20PageSpeed%20%7C%20Hosting%20Altervista-FF9800?style=for-the-badge)](./INFOprestazioni.md)
+
 
 
 
