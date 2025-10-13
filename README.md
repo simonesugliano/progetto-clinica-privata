@@ -255,7 +255,7 @@ Infine, sono state introdotte **microanimazioni e transizioni grafiche più morb
 - Effettuata la pubblicazione online del progetto completo.  
 - Caricato il link del sito nella repository GitHub.  
 - Creata la **mappa completa del flusso del sito**, con rappresentazione delle pagine, modali e logiche di prenotazione.
-  ![Mappa del sito](13-10)
+  [Mappa del sito](13-10/flusso-sito(2))
 - Avviata la fase di pulizia e riordino del codice, con ottimizzazione finale dei file e dei commenti.
 
 ### Prossimi passi
