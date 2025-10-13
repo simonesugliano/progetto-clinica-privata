@@ -264,6 +264,10 @@ Infine, sono state introdotte **microanimazioni e transizioni grafiche più morb
 
 ---
 
+[Vai alla cartella del giorno 13-10-25](13-10/)
+
+---
+
 
 
 
