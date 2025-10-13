@@ -10,7 +10,7 @@
 [![Prestazioni](https://img.shields.io/badge/Prestazioni-Analisi%20PageSpeed%20%7C%20Hosting%20Altervista-FF9800?style=for-the-badge)](./INFOprestazioni.md)
 
 
-**[Visualizza il sito](https://democlinicaprivata.altervista.org/)**
+# [Visualizza il sito](https://democlinicaprivata.altervista.org/)
 
 
 # Progetto Clinica Privata
