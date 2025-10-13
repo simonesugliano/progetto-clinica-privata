@@ -251,10 +251,12 @@ Infine, sono state introdotte **microanimazioni e transizioni grafiche più morb
 **Obiettivo attuale:** completarre le ultime modifiche strutturali, pubblicare il sito online e preparare la versione definitiva del codice per il caricamento su GitHub.
 
 ### Lavori svolti
-- Portate avanti e terminate **ttte le modifiche sostanziali e strutturali** al sito.  
-- Effettuata la **pubblicazione online** del progetto completo.  
-- Caricato il **link del sito nella repository GitHub**.  
-- Avviata la fase di **pulizia e riordino del codice**, ccon ottimizzazione finale dei file e dei commenti.  
+- Portate avanti e terminate tutte le modifiche sostanziali e strutturali al sito.  
+- Effettuata la pubblicazione online del progetto completo.  
+- Caricato il link del sito nella repository GitHub.  
+- Creata la **mappa completa del flusso del sito**, con rappresentazione delle pagine, modali e logiche di prenotazione.
+  ![Mappa del sito](13-10)
+- Avviata la fase di pulizia e riordino del codice, con ottimizzazione finale dei file e dei commenti.
 
 ### Prossimi passi
 - Completare entro domani la **pulizia definitiva del codice**.  
