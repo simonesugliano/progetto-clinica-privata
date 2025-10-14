@@ -1,0 +1,811 @@
+<!-- 
+  Progetto: Clinica Privata Torino
+  Autore: Simone Sugliano
+  Descrizione: Sito dimostrativo full responsive con gestione prenotazioni, database e ottimizzazione SEO.
+  Tecnologie: HTML5, CSS3, JavaScript, Bootstrap, Firebase
+  Data: Ottobre 2025
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <!-- META BASE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica Privata Torino - Visite Specialistiche e Prenotazioni Online</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Clinica Privata a Torino: visite specialistiche, diagnostica avanzata e personale qualificato. Prenota online la tua visita in modo semplice e veloce.">
+  <meta name="keywords"
+    content="clinica privata Torino, visite specialistiche, prenotazioni mediche, centro medico, diagnostica, medici Torino, sanità privata">
+  <meta name="author" content="Clinica Privata S.r.l.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Clinica Privata Torino - Visite Specialistiche e Prenotazioni Online">
+  <meta property="og:description"
+    content="Prenota visite mediche specialistiche, diagnostica e consulenze sanitarie nella nostra Clinica Privata di Torino. Personale qualificato e tempi rapidi.">
+  <meta property="og:image" content="https://democlinicaprivata.altervista.org/assets/img/clinica.png">
+  <meta property="og:url" content="https://democlinicaprivata.altervista.org">
+  <meta property="og:type" content="website">
+
+  <!-- CANONICAL + FAVICON -->
+  <link rel="canonical" href="https://democlinicaprivata.altervista.org/">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="it">
+
+
+  <!----------------------------------------------------------------------------------------------------------link-->
+  <!-------------------------------------------------------------------------------------------------------- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!---------------------------------------------------------------------------------------------------------- Font Avesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!---------------------------------------------------------------------------------------------------------- File CSS personalizzato -->
+  <link rel="stylesheet" href="css/style.css">
+  <!---------------------------------------------------------------------------------------------------------- script cookies iubenda -->
+  <script type="text/javascript"
+    src="https://embeds.iubenda.com/widgets/7a470f35-9785-4723-8fd0-7e14a683250d.js"></script>
+  <!----------------------------------------------------------------------------------------------------------FINE link-->
+  <!-- =============================================================
+     OTTIMIZZAZIONE SEO AVANZATA (DEMO)
+     Dati strutturati JSON-LD per MedicalClinic (schema.org)
+     Scopo: aiutare Google a comprendere la natura del sito
+     come clinica medica locale (demo didattica, non reale)
+     ============================================================= -->
+
+  <!-- Impedisce l'indicizzazione del sito demo -->
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+
+  <!-- Dati strutturati indicizzazione seo posizione google JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalClinic", "LocalBusiness"],
+  "name": "Clinica Privata Torino",
+  "description": "Clinica Privata a Torino specializzata in visite mediche e diagnostica. Progetto demo realizzato a scopo didattico.",
+  "image": "https://democlinicaprivata.altervista.org/assets/img/clinica.png",
+  "@id": "https://democlinicaprivata.altervista.org/",
+  "url": "https://democlinicaprivata.altervista.org/",
+  "telephone": "+393923688757",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Roma 123",
+    "addressLocality": "Torino",
+    "addressRegion": "Piemonte",
+    "postalCode": "10121",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.0703,
+    "longitude": 7.6869
+  },
+  "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+  }],
+  "department": [
+    { "@type": "MedicalSpecialty", "name": "Ortopedia" },
+    { "@type": "MedicalSpecialty", "name": "Otorinolaringoiatria" },
+    { "@type": "MedicalSpecialty", "name": "Neurologia" },
+    { "@type": "MedicalSpecialty", "name": "Oncologia" },
+    { "@type": "MedicalSpecialty", "name": "Cardiologia" },
+    { "@type": "MedicalSpecialty", "name": "Pediatria" },
+    { "@type": "MedicalSpecialty", "name": "Ginecologia" },
+    { "@type": "MedicalSpecialty", "name": "Chirurgia Plastica" },
+    { "@type": "MedicalSpecialty", "name": "Dermatologia" }
+  ],
+  "sameAs": [
+    "https://facebook.com",
+    "https://instagram.com",
+    "https://linkedin.com"
+  ]
+}
+</script>
+  <!-- fine Dati strutturati indicizzazione seo posizione google JSON-LD -->
+
+  <!-- Dati strutturati JSON-LD per sezione Domande Frequenti (FAQPage) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Come posso prenotare una visita medica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puoi prenotare direttamente online dalla sezione “Prenotazioni” del sito, scegliendo medico, data e orario. Riceverai una conferma immediata a schermo e tramite email."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "È necessario avere l’impegnativa del medico di base?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, trattandosi di una clinica privata, le visite possono essere prenotate liberamente senza impegnativa. Tuttavia puoi portarla con te se già disponibile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso modificare o cancellare una prenotazione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Accedendo alla sezione “Le mie prenotazioni” puoi visualizzare, modificare o cancellare le prenotazioni effettuate tramite il sistema locale (LocalStorage)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali metodi di pagamento accettate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Accettiamo pagamenti in contanti, carta di credito, bancomat e bonifico. Il pagamento avviene direttamente in struttura dopo la visita."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dove si trova la clinica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La nostra sede si trova in Via Roma 123, Torino. Puoi raggiungerci facilmente con i mezzi pubblici o in auto. Tutte le informazioni sono nella sezione Contatti."
+      }
+    }
+  ]
+}
+</script>
+  <!-- fine Dati strutturati JSON-LD per sezione Domande Frequenti (FAQPage) -->
+
+
+</head>
+
+<body id="top">
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+  <!-- Navbar full-width, elegante e responsive -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light pt-0">
+    <div class="container-xl bg-lightblue shadow-sm px-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand sfondo" href="assets/img/clinica.png" target="_blank">
+        <img src="assets/img/logoClinica.png"
+          alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online"
+          width="100" class="d-inline-block">
+      </a>
+
+      <!-- Bottone hamburger per mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Linkdella navbar -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav">
+          <!-- toggle tema scuro/chiar-->
+          <li class="nav-item d-flex align-items-center me-3">
+            <button id="theme-toggle" class="btn btn-outline-secondary rounded-circle p-2" title="Cambia tema">
+              <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+          </li>
+          <br>
+          
+          <!-- Chiamata ripida -->
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+390123456789" aria-label="Chiama la clinica">
+              <i class="fas fa-phone-alt text-success me-1"></i> 3923688757
+            </a>
+          </li>
+
+          <!-- Info mail -->
+          <li class="nav-item">
+            <a class="nav-link" href="#form-prenotazioni">
+              <i class="fas fa-envelope text-success me-1"></i> Richiedi informazioni
+            </a>
+          </li>
+
+          <!-- Altrilink -->
+          <li class="nav-item">
+            <a class="nav-link active" href="#top">Home</a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/servizi.html">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/professionisti.html">Professionisti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/prenota.html">Prenota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/contatti.html">Contatti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/areaPersonale.html">Area Personale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/blog.html">Blog</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------------------------------------------------fine navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+
+  <!----------------------------------------------------------------------------------------------hero---------------------------------------------------------------------------------------------------------->
+  <div class="container-xl p-0">
+    <section class="hero d-flex flex-column justify-content-end text-center m-0">
+      <div>
+        <h1 class="display-4">Clinica Privata Torino</h1>
+      </div>
+      <!--Orari e Indirizzo-->
+      <div class="d-flex justify-content-between px-4 py-3 w-100">
+        <div class="fw-bold text-start">
+          ORARI<br>Lun–Ven: 8:00–19:00
+        </div>
+        <div class="fw-bold text-end">
+          INDIRIZZO<br>Via Roma 123 – Torino
+        </div>
+      </div>
+    </section>
+  </div>
+  <!----------------------------------------------------------------------------------------------fine hero---------------------------------------------------------------------------------------------------------->
+
+  <!----------------------------------------------------------------------------------------------side perche scegliere noni---------------------------------------------------------------------------------------------------------->
+  <section class="container py-5">
+    <div class="row align-items-center">
+      <!-- Sidebar con  motivi -->
+      <div class="col-md-4 mb-4">
+        <h3 class="fw-bold mb-4 mappa">Perché scegliere noi</h3>
+        <!-- motivi1 -->
+        <div class="reason-box d-flex align-items-start mb-3">
+          <div class="fs-3 text-success me-3">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Rapidità e puntualità</h6>
+            <p class="text-muted small mb-0">Prenotazioni rapide e attese ridotte.</p>
+          </div>
+        </div>
+        <!-- motivi2 -->
+        <div class="reason-box d-flex align-items-start mb-3">
+          <div class="fs-3 text-success me-3">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Specialisti qualificati</h6>
+            <p class="text-muted small mb-0">Un team di medici con esperienza e attenzione.</p>
+          </div>
+        </div>
+        <!-- motivi3 -->
+        <div class="reason-box d-flex align-items-start mb-3">
+          <div class="fs-3 text-success me-3">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Ascolto e umanità</h6>
+            <p class="text-muted small mb-0">Accoglienza empatica in ogni fase del percorso.</p>
+          </div>
+        </div>
+        <!-- motivi4 -->
+        <div class="reason-box d-flex align-items-start mb-3">
+          <div class="fs-3 text-success me-3">
+            <i class="fas fa-hospital-alt"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Ambiente moderno</h6>
+            <p class="text-muted small mb-0">Struttura luminosa, accogliente e tecnologica.</p>
+          </div>
+        </div>
+        <!-- Spazio vuoto a destra equilibrio  -->
+        <div class="col-md-8 d-none d-md-block"></div>
+
+      </div>
+  </section>
+  <!----------------------------------------------------------------------------------------------fine side perche scegliere noni---------------------------------------------------------------------------------------------------------->
+
+  <!----------------------------------------------------------------------------------------------servizi piu richiesti--------------------------------------------------------------------------------------------------------->
+  <section class="container py-5">
+    <h2 class="text-center mb-4 mappa">Servizi più richiesti</h2>
+    <div class="row text-center justify-content-center">
+
+      <!-- Box 1: Pdiatria -->
+      <div class="col-md-4 mb-4">
+        <a href="/html/professionisti.html?disciplina=pediatria" class="servizio-box text-decoration-none">
+          <div class="box-servizio-img p-4 shadow rounded h-100 d-flex flex-column justify-content-end"
+            style="background-image: url('/assets/img/pediatra.jpg');">
+            <div class="bg-overlay p-3 rounded">
+              <h5 class="fw-bold text-white">Visite Pedia<wbr>triche</h5>
+              <p class="text-white small mb-0">Crescita, sviluppo e preven<wbr>zione per i più piccoli.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- box2: Ginecologia -->
+      <div class="col-md-4 mb-4">
+        <a href="/html/professionisti.html?disciplina=ginecologia" class="servizio-box text-decoration-none">
+          <div class="box-servizio-img p-4 shadow rounded h-100 d-flex flex-column justify-content-end"
+            style="background-image: url('/assets/img/ginecologia.jpg');">
+            <div class="bg-overlay p-3 rounded">
+              <h5 class="fw-bold text-white">Control<wbr>li Gineco<wbr>logici</h5>
+              <p class="text-white small mb-0">Benessere femminile, preven<wbr>zione e accompa<wbr>gna<wbr>mento.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!--  3:  cardio-->
+      <div class="col-md-4 mb-4">
+        <a href="/html/professionisti.html?disciplina=cardiologia" class="servizio-box text-decoration-none">
+          <div class="box-servizio-img p-4 shadow rounded h-100 d-flex flex-column justify-content-end"
+            style="background-image: url('/assets/img/cardiologia.jpg');">
+            <div class="bg-overlay p-3 rounded">
+              <h5 class="fw-bold text-white">Visite Cardio<wbr>logiche</h5>
+              <p class="text-white small mb-0">Controlli del cuore, pressione e preven<wbr>zione cardio<wbr>vascolare.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <!----------------------------------------------------------------------------------------------fine servizi piu richiesti--------------------------------------------------------------------------------------------------------->
+
+
+  <!----------------------------------------------------------------------------------------------cards presentazione---------------------------------------------------------------------------------------------------------->
+  <section class="container py-5">
+
+    <!-- CARD 1:  -->
+    <div class="row align-items-center mb-5 p-1 transparent-card ">
+      <div class="col-md-6 px-0">
+        <img src="./assets/img/clinica.png"
+          alt="Facciata moderna della Clinica Privata, struttura sanitaria luminosa e accogliente situata a Torino"
+          class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6 text-center text-md-start">
+        <h3>Presenta<wbr>zione Centro</h3>
+        <p>Benvenuti nella nostra clinica, un luogo dove il benessere viene prima di tutto.</p>
+        <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalCentro">
+          Scopri il nostro Centro
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 2:  -->
+    <div class="row align-items-center mb-5 p-1 transparent-card">
+      <div class="col-md-6 px-0">
+        <img src="./assets/img/servizi.jpg"
+          alt="Stetoscopio su sfondo chiaro, simbolo dei numerosi servizi medici e specialistici offerti dalla Clinica Privata"
+          class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6 text-center text-md-start">
+        <h3>Presenta<wbr>zione Servizi</h3>
+        <p>Scopri i nostri servizi sanitari, personalizzati per ogni esigenza.</p>
+        <a href="/html/servizi.html" class="btn btn-outline-primary mt-2">Vai ai Servizi</a>
+      </div>
+    </div>
+
+
+    <!-- CARD 3:  -->
+    <div class="row align-items-center mb-5 p-1 transparent-card ">
+      <div class="col-md-6 px-0">
+        <img src="./assets/img/prof.jpg"
+          alt="Team di professionisti medici che si confrontano, simbolo delle diverse specialità trattate e dell’alta professionalità della Clinica Privata"
+          class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6 text-center text-md-start">
+        <h3>Presenta<wbr>zione Professio<wbr>nisti</h3>
+        <p>I nostri specialisti ti seguiranno passo dopo passo con competenza e umanità.</p>
+        <a href="/html/professionisti.html" class="btn btn-outline-primary mt-2">Scopri i Professionisti</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!----------------------------------------------------------------------------------------------fine cards presentazione---------------------------------------------------------------------------------------------------------->
+
+
+  <!----------------------------------------------------------------------------------------------testimonianse--------------------------------------------------------------------------------------------------------->
+  <section class="py-5">
+    <div class="container-xl">
+      <h2 class="text-center mb-5 mappa">Cosa dicono di noi</h2>
+
+      <div id="carouselTestimonianze" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Testimonianza 1 -->
+          <div class="carousel-item active">
+            <div class="d-md-flex align-items-center justify-content-center text-center text-md-start">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                class="rounded-circle shadow mx-auto mx-md-4 mb-3 mb-md-0" width="100"
+                alt="Paziente soddisfatto che lascia una testimonianza positiva sui servizi medici e sull’accoglienza della Clinica Privata di Torino">
+              <div>
+                <p class="lead">"Sono stata accolta con gentilezza e professionalità. Visita rapida e precisa. Mi sono
+                  sentita ascoltata fin dal primo momento."</p>
+                <h6 class="fw-bold mb-0">Chiara B.</h6>
+                <small class="text-muted">Torino</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonianza 2 -->
+          <div class="carousel-item">
+            <div class="d-md-flex align-items-center justify-content-center text-center text-md-start">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                class="rounded-circle shadow mx-auto mx-md-4 mb-3 mb-md-0" width="100"
+                alt="Paziente soddisfatto che lascia una testimonianza positiva sui servizi medici e sull’accoglienza della Clinica Privata di Torino">
+              <div>
+                <p class="lead">"Ambienti puliti, moderni e silenziosi. Il medico ha spiegato tutto con chiarezza.
+                  Tornerò sicuramente."</p>
+                <h6 class="fw-bold mb-0">Andrea L.</h6>
+                <small class="text-muted">Asti</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonianza 3 -->
+          <div class="carousel-item">
+            <div class="d-md-flex align-items-center justify-content-center text-center text-md-start">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                class="rounded-circle shadow mx-auto mx-md-4 mb-3 mb-md-0" width="100"
+                alt="Paziente soddisfatto che lascia una testimonianza positiva sui servizi medici e sull’accoglienza della Clinica Privata di Torino">
+              <div>
+                <p class="lead">"Prenotazione semplice, prezzi chiari e personale sempre disponibile. Finalmente un
+                  centro che mette il paziente al centro."</p>
+                <h6 class="fw-bold mb-0">Lucia G.</h6>
+                <small class="text-muted">Chieri</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Controlli -->
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonianze"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonianze"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button> -->
+      </div>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------------------------------- fine testimonianse--------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+  <!----------------------------------------------------------------------------------------------mappa---------------------------------------------------------------------------------------------------------->
+  <section class="container-xl ">
+    <h1 class="mappa">Dove Trovarci</h1>
+    <div class="map-wrapper my-5">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8886475398557!2d7.688553315583653!3d45.06862577909812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d7ed066ce61%3A0x9a5bfe8e73ed5030!2sVia%20Po%2C%2010124%20Torino%20TO!5e0!3m2!1sit!2sit!4v1669289632310!5m2!1sit!2sit"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+  <!----------------------------------------------------------------------------------------------fine mappa---------------------------------------------------------------------------------------------------------->
+
+  <!----------------------------------------------------------------------------------------------sezione faq---------------------------------------------------------------------------------------------------------->
+  <section id="faq" class="py-5 ">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Domande Frequenti</h2>
+        <p class="text-muted">Risposte alle domande più comuni sui nostri servizi e modalità di prenotazione.</p>
+      </div>
+
+      <div class="accordion" id="faqAccordion">
+
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1-heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
+              aria-expanded="true" aria-controls="faq1">
+              Come posso prenotare una visita medica?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Puoi prenotare direttamente online dalla sezione <strong>“Prenotazioni”</strong> del sito, scegliendo
+              medico, data e orario. Riceverai una conferma immediata a schermo e tramite email.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
+              aria-expanded="false" aria-controls="faq2">
+              È necessario avere l’impegnativa del medico di base?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No, trattandosi di una <strong>clinica privata</strong>, le visite possono essere prenotate liberamente
+              senza impegnativa. Tuttavia puoi portarla con te se già disponibile.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
+              aria-expanded="false" aria-controls="faq3">
+              Posso cancellare una mia prenotazione?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sì. Accedendo alla sezione <strong>“Le mie prenotazioni”</strong> puoi visualizzare e, qualora lo
+              ritenessi opportuno cancellare le prenotazioni effettuate, agggiornando in tempo reale il database e
+              quindi liberando lo slot del medico.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq4-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"
+              aria-expanded="false" aria-controls="faq4">
+              Quali metodi di pagamento accettate?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Accettiamo pagamenti in <strong>contanti, carta di credito, bancomat e bonifico</strong>. Il pagamento
+              avviene direttamente in struttura dopo la visita.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq5-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"
+              aria-expanded="false" aria-controls="faq5">
+              Dove si trova la clinica?
+            </button>
+          </h2>
+          <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5-heading"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              La nostra sede si trova in <strong>Via Roma 123, Torino</strong>. Puoi raggiungerci facilmente con i mezzi
+              pubblici o in auto. Tutte le informazioni sono nella sezione <strong>Contatti</strong>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!----------------------------------------------------------------------------------------------fine sezione faq---------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------------------------ form invio mail di richiesta, visibile in fondo alla home fisso oppure premendo "info prenotazioni" nella navbar/footer -->
+  <section id="form-prenotazioni" class="container py-5">
+    <h2 class="text-center mb-4 mappa">Richiedi informazioni</h2>
+    <div class="row">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <form action="https://formspree.io/f/xpwylono" method="POST" target="_blank">
+
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="Nome" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="Email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="messaggio" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="messaggio" name="Messaggio" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Invia richiesta</button>
+        </form>
+
+        <!-- Messaggio di conferma-->
+        <p id="form-status" class="text-center mt-3 fw-semibold text-success d-none">
+          ✅ Messaggio inviato correttamente!
+        </p>
+      </div>
+    </div>
+  </section>
+  <!----------------------------------------------------------------------- fine form invio mail di richiesta, visibile in fondo alla home fisso oppure premendo "info prenotazioni" nella navbar -->
+
+  <!----------------------------------------------------------------------- footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <footer class=" text-dark pt-4 ">
+    <div class="container-xl bg-lightblue border-top px-4">
+      <div class="row gy-4 text-center text-md-start">
+
+        <!-- COL 1: SOCIAL -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">SOCIAL</h6>
+          <a href="https://facebook.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-facebook-f me-2"></i> Facebook
+          </a>
+          <a href="https://instagram.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-instagram me-2"></i> Instagram
+          </a>
+          <a href="https://linkedin.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-linkedin me-2"></i> LinkedIn
+          </a>
+          <!-- pulsante condividi-->
+<button id="shareBtn" class="btn btn-outline-primary">
+  <i class="fas fa-share-alt me-2"></i>Condividi
+</button>
+        </div>
+
+        <!-- COL 2: CONTATTI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">CONTATTI</h6>
+          <p class="mb-1">
+            <i class="fas fa-phone-alt text-success me-2"></i>
+            <a href="tel:+390123456789" class="text-muted text-decoration-none footer-link">3923688757</a>
+          </p>
+          <p class="mb-1">
+            <i class="fas fa-envelope text-success me-2"></i>
+            <a href="#form-prenotazioni" class="text-muted text-decoration-none footer-link">Richiedi informazioni</a>
+          </p>
+        </div>
+
+        <!-- COL 3: LEGALI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">INFORMA<wbr>ZIONI</h6>
+          <p class="mb-1">P.IVA 12345678901</p>
+          <a href="html/noteLegalii.html" class="text-muted text-decoration-none d-block footer-link"
+            target="_blank">Note legali</a>
+          <a href="/html/privacyEcookies.html" class="text-muted text-decoration-none d-block footer-link"
+            target="_blank">Privacy & Cookie</a>
+          <p class="text-center text-muted small mt-4">
+            ⚠️ Questo sito è una demo realizzata a scopo didattico.
+            I contenuti, nomi e indirizzi sono puramente fittizi.
+          </p>
+
+        </div>
+
+        <!-- COL 4: LOGO & COPYRIGHT -->
+        <div class="col-12 col-md-3 text-md-end text-center">
+          <a class="navbar-brand sfondo d-inline-block mb-2" href="assets/img/clinica.png" target="_blank">
+            <img src="assets/img/logoClinica.png"
+              alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online"
+              width="100">
+          </a>
+          <p class="small text-muted">© 2025 Clinica Privata. Tutti i diritti riservati.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!----------------------------------------------------------------------- fine footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- -----------------------------------------------------------------------------MODALE FULLSCREEN presemtazione clinica -->
+  <div class="modal fade" id="modalCentro" tabindex="-1" aria-labelledby="modalCentroLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <!-- HEADER CON SFONDO -->
+        <div class="modal-header p-0 border-0">
+          <div class="w-100"
+            style="background-image: url('assets/img/clinica.png'); background-size: cover; background-position: center; height: 220px;">
+            <h2 class="text-white text-center py-5" style="background-color: rgba(0, 0, 0, 0.5); font-weight: bold;">
+              Benvenuti nella nostra Clinica</h2>
+          </div>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+            aria-label="Chiudi"></button>
+        </div>
+
+        <!-- CORPO -->
+        <div class="modal-body">
+          <div class="content-wrapper">
+            <div class="modal-body px-4 py-5">
+              <h4 class="mb-3">Benvenuti nella nostra Clinica: competenza, attenzione e umanità</h4>
+              <p>Nel cuore della città, la nostra clinica privata nasce con un obiettivo preciso: prenderci cura delle
+                persone, offrendo un ambiente sicuro, moderno e altamente specializzato dove ogni paziente possa
+                sentirsi
+                accolto, ascoltato e seguito con attenzione.</p>
+
+              <p>Ci distinguiamo per un approccio integrato alla salute: medicina specialistica, tecnologie avanzate e
+                centralità della persona sono le fondamenta su cui costruiamo ogni percorso di cura.</p>
+
+              <h5 class="mt-4">Un'équipe selezionata di professionisti</h5>
+              <p>Collaboriamo con medici di grande esperienza, selezionati per competenza, aggiornamento costante e
+                attenzione al paziente. Ogni specialista lavora in sinergia con gli altri reparti, per garantire un
+                inquadramento completo e personalizzato di ogni caso clinico.</p>
+
+              <p>Il nostro ambulatorio offre servizi in numerose discipline, tra cui:</p>
+              <ul>
+                <li>Ortopedia, neurologia, cardiologia</li>
+                <li>Ginecologia, pediatria, dermatologia</li>
+                <li>Chirurgia plastica, oncologia, otorinolaringoiatria</li>
+              </ul>
+
+              <h5 class="mt-4">Tempi rapidi, massima efficienza</h5>
+              <p>Sappiamo quanto sia importante non dover attendere quando si tratta della propria salute. Per questo,
+                il
+                nostro centro garantisce tempi brevi per le visite, prenotazioni flessibili, anche in orari serali, e
+                percorsi semplificati per esami e controlli.</p>
+
+              <h5 class="mt-4">Tariffe trasparenti e agevolazioni</h5>
+              <p>Abbiamo scelto una politica di tariffe chiare, pensata per permettere a chiunque di accedere a cure di
+                qualità senza sorprese. Sono disponibili pacchetti di prevenzione, convenzioni aziendali, agevolazioni
+                per
+                famiglie e promozioni stagionali.</p>
+
+              <p>Il nostro staff di segreteria è sempre disponibile per orientarti nella scelta del percorso più adatto,
+                illustrandoti le opzioni disponibili con la massima trasparenza.</p>
+
+              <h5 class="mt-4">Tecnologia e comfort</h5>
+              <p>La struttura è dotata di strumentazione diagnostica all’avanguardia, ambienti luminosi e silenziosi,
+                sale
+                d’attesa accoglienti e spazi progettati per garantire privacy, igiene e benessere.</p>
+
+              <p>Crediamo che anche l’ambiente faccia parte del processo di guarigione.</p>
+
+              <h5 class="mt-4">Scegli la salute, scegli la fiducia</h5>
+              <p>Che tu abbia bisogno di una semplice consulenza, di un percorso di prevenzione o di una valutazione
+                specialistica, il nostro centro ti accoglierà con professionalità, ascolto e cura autentica.</p>
+
+              <p class="mt-4"> <strong>Prenota oggi stesso la tua visita e scopri un modo diverso di prenderti cura di
+                  te.</strong></p>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer justify-content-between px-4 pb-4 border-0">
+              <a href="/html/professionisti.html" class="btn btn-outline-primary mt-2">Scopri i nostri specialisti</a>
+              <button type="button" class="btn btn-outline-secondary mt-2" data-bs-dismiss="modal">Chiudi</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------------------------------fine -MODALE FULLSCREEN presemtazione clinica -->
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Script JS personalizzato -->
+  <script src="/js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
