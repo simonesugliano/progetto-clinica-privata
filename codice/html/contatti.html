@@ -1,0 +1,316 @@
+<!-- 
+  Progetto: Clinica Privata Torino
+  Autore: Simone Sugliano
+  Descrizione: Sito dimostrativo full responsive con gestione prenotazioni, database e ottimizzazione SEO.
+  Tecnologie: HTML5, CSS3, JavaScript, Bootstrap, Firebase
+  Data: Ottobre 2025
+-->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <!-- META BASE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - Clinica Privata Torino</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Contatta la Clinica Privata di Torino: trova numero di telefono, email, indirizzo e orari. Compila il modulo per richiedere informazioni.">
+  <meta name="keywords"
+    content="contatti clinica Torino, telefono clinica privata, email clinica Torino, informazioni, indirizzo clinica privata, prenotazioni mediche">
+  <meta name="author" content="Clinica Privata S.r.l.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Contatti - Clinica Privata Torino">
+  <meta property="og:description"
+    content="Richiedi informazioni alla Clinica Privata di Torino: numero di telefono, email e modulo online per contattare la segreteria.">
+  <meta property="og:image" content="https://democlinicaprivata.altervista.org/assets/img/clinica.png">
+  <meta property="og:url" content="https://democlinicaprivata.altervista.org/html/contatti.html">
+  <meta property="og:type" content="website">
+
+  <!-- CANONICAL + FAVICON -->
+  <link rel="canonical" href="https://democlinicaprivata.altervista.org/html/contatti.html">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="it">
+
+
+  <!----------------------------------------------------------------------------------------------------------link-->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Avesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- File CSS personalizzato -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- script cookies iubenda -->
+  <script type="text/javascript"
+    src="https://embeds.iubenda.com/widgets/7a470f35-9785-4723-8fd0-7e14a683250d.js"></script>
+
+</head>
+
+<body>
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+  <!-- Navbar full-width, elegante e responsive -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light pt-0">
+    <div class="container-xl bg-lightblue shadow-sm px-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand sfondo" href="/assets/img/clinica.png" target="_blank">
+        <img src="/assets/img/logoClinica.png" alt="Logo" width="100" class="d-inline-block">
+      </a>
+
+      <!-- Bottone hamburger per mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Link della navbar -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav">
+          <!-- toggle tema scuro/chiar-->
+          <li class="nav-item d-flex align-items-center me-3">
+            <button id="theme-toggle" class="btn btn-outline-secondary rounded-circle p-2" title="Cambia tema">
+              <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+          </li>
+          <!-- Chiamata rapida -->
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+390123456789">
+              <i class="fas fa-phone-alt text-success me-1"></i> 3923688757
+            </a>
+          </li>
+
+          <!-- Info mail -->
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#form-prenotazioni">
+              <i class="fas fa-envelope text-success me-1"></i> Richiedi informazioni
+            </a>
+          </li>
+
+          <!-- Altri link -->
+          <li class="nav-item">
+            <a class="nav-link " href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="servizi.html">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="professionisti.html">Professionisti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="prenota.html">Prenota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contatti.html">Contatti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/areaPersonale.html">Area Personale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/blog.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+  <!-- ===================== SEZIONE CONTATTI ===================== -->
+  <section class="py-5 text-center" style="margin-top:80px;">
+    <div class="container">
+      <h1 class="fw-bold mb-5 mappa">Contatta la Clinica</h1>
+
+      <!-- BOTTONI -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-3 col-6 mb-3">
+          <a href="https://wa.me/3923688757" target="_blank" class="btn btn-outline-success w-100">
+            <i class="fab fa-whatsapp me-2"></i> Messaggio
+          </a>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+          <a href="tel:+393923688757" rel="noopener" class="btn btn-outline-danger w-100">
+            <i class="fas fa-phone me-2"></i> Chiamaci 3923688757
+          </a>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+          <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#formModal">
+            <i class="fas fa-envelope me-2"></i> Scrivici
+          </button>
+        </div>
+      </div>
+
+      <!-- ORARI E INDIRIZZO -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-4 col-12">
+          <div class="p-4 bg-white rounded shadow-sm">
+            <h5 class="fw-bold text-success mb-2"><i class="far fa-clock me-2"></i>Orari</h5>
+            <p class="mb-0">Lunedì – Venerdì: 8:00 – 19:00</p>
+            <p class="mb-0">Sabato: 8:00 – 12:30</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-12 mt-3 mt-md-0">
+          <div class="p-4 bg-white rounded shadow-sm">
+            <h5 class="fw-bold text-success mb-2"><i class="fas fa-map-marker-alt me-2"></i>Indirizzo</h5>
+            <p class="mb-0">Via Roma 123<br>10100 Torino (TO)</p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- MAPPA -->
+
+
+  <section class="container-xl ">
+    <h1 class="mappa">Dove Trovarci</h1>
+    <div class="map-wrapper my-5">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8886475398557!2d7.688553315583653!3d45.06862577909812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d7ed066ce61%3A0x9a5bfe8e73ed5030!2sVia%20Po%2C%2010124%20Torino%20TO!5e0!3m2!1sit!2sit!4v1669289632310!5m2!1sit!2sit"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+  <!-- ===================== MODALE FORMSPREE ===================== -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="formModalLabel">Scrivici un messaggio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="https://formspree.io/f/xpwylono" method="POST" target="_blank">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Messaggio</label>
+              <textarea name="message" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Invia</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!----------------------------------------------------------------------- footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <footer class=" text-dark pt-4 ">
+    <div class="container-xl bg-lightblue border-top px-4">
+      <div class="row gy-4 text-center text-md-start">
+
+        <!-- COL 1: SOCIAL -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">SOCIAL</h6>
+          <a href="https:facebook.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-facebook-f me-2"></i> Facebook
+          </a>
+          <a href="https:instagram.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-instagram me-2"></i> Instagram
+          </a>
+          <a href="https:linkedin.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-linkedin me-2"></i> LinkedIn
+          </a>
+          <!-- pulsante condividi-->
+<button id="shareBtn" class="btn btn-outline-primary">
+  <i class="fas fa-share-alt me-2"></i>Condividi
+</button>
+        </div>
+
+        <!-- COL 2: CONTATTI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">CONTATTI</h6>
+          <p class="mb-1">
+            <i class="fas fa-phone-alt text-success me-2"></i>
+            <a href="tel:+390123456789" class="text-muted text-decoration-none footer-link">3923688757</a>
+          </p>
+          <p class="mb-1">
+            <i class="fas fa-envelope text-success me-2"></i>
+            <a href="../index.html#form-prenotazioni" class="text-muted text-decoration-none footer-link">Richiedi
+              informazioni</a>
+          </p>
+        </div>
+
+        <!-- COL 3: LEGALI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">INFORMAZIONI</h6>
+          <p class="mb-1">P.IVA 12345678901</p>
+          <a href="noteLegalii.html" class="text-muted text-decoration-none d-block footer-link" target="_blank">Note
+            legali</a>
+          <a href="#" class="text-muted text-decoration-none d-block footer-link">Privacy & Cookie</a>
+           <p class="text-center text-muted small mt-4">
+            ⚠️ Questo sito è una demo realizzata a scopo didattico.
+            I contenuti, nomi e indirizzi sono puramente fittizi.
+          </p>
+        </div>
+
+        <!-- COL 4: LOGO & COPYRIGHT -->
+        <div class="col-12 col-md-3 text-md-end text-center">
+          <a class="navbar-brand sfondo d-inline-block mb-2" href="/assets/img/clinica.png" target="_blank">
+            <img src="/assets/img/logoClinica.png" alt="Logo" width="100">
+          </a>
+          <p class="small text-muted">© 2025 Clinica Privata. Tutti i diritti riservati.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!----------------------------------------------------------------------- fine footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script JS personalizzato -->
+  <script src="/js/index.js"></script>
+</body>
+
+</html>

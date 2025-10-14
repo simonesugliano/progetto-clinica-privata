@@ -1,0 +1,861 @@
+<!-- 
+  Progetto: Clinica Privata Torino
+  Autore: Simone Sugliano
+  Descrizione: Sito dimostrativo full responsive con gestione prenotazioni, database e ottimizzazione SEO.
+  Tecnologie: HTML5, CSS3, JavaScript, Bootstrap, Firebase
+  Data: Ottobre 2025
+-->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <!-- META BASE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prenotazioni Online - Clinica Privata Torino</title>
+
+  <!-- SEO -->
+<meta name="description" content="Prenota online la tua visita specialistica presso la Clinica Privata di Torino. Scegli medico, data e orario in modo semplice e veloce.">
+<meta name="keywords" content="prenotazione visite Torino, prenotazioni mediche, prenotare clinica, prenotazioni online, clinica privata Torino">
+  <meta name="author" content="Clinica Privata S.r.l.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- OPEN GRAPH -->
+<meta property="og:title" content="Prenota la tua Visita - Clinica Privata Torino">
+<meta property="og:description" content="Prenota la tua visita online con un click: scegli lo specialista, la data e l’orario più comodi per te.">
+  <meta property="og:image" content="https://democlinicaprivata.altervista.org/assets/img/clinica.png">
+<meta property="og:url" content="https://democlinicaprivata.altervista.org/html/prenota.html">
+  <meta property="og:type" content="website">
+
+  <!-- CANONICAL + FAVICON -->
+<link rel="canonical" href="https://democlinicaprivata.altervista.org/html/prenota.html">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+  <meta name="robots" content="index, follow">
+<meta name="language" content="it">
+
+
+  <!----------------------------------------------------------------------------------------------------------link-->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Avesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- File CSS personalizzato -->
+  <link rel="stylesheet" href="/css/style.css">
+<!-- Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- Tema opzionale scuro (più moderno) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("4hAxfzArHNF5zp1iX"); // PUBLIC KEY da EmailJS Dashboard
+  })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--sweetalert per sostituire alert -->
+    <!-- script cookies iubenda -->
+<script type="text/javascript" src="https://embeds.iubenda.com/widgets/7a470f35-9785-4723-8fd0-7e14a683250d.js"></script>
+
+</head>
+
+<body>
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+  <!-- Navbar full-width, elegante e responsive -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light pt-0">
+    <div class="container-xl bg-lightblue shadow-sm px-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand sfondo" href="/assets/img/clinica.png" target="_blank">
+        <img src="/assets/img/logoClinica.png" alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online" width="100" class="d-inline-block">
+      </a>
+
+      <!-- Bottone hamburger per mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Link della navbar -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav">
+
+          <!-- Chiamata rapida -->
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+390123456789" aria-label="Chiama la clinica">
+              <i class="fas fa-phone-alt text-success me-1"></i> 3923688757
+            </a>
+          </li>
+
+          <!-- Info mail -->
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#form-prenotazioni">
+              <i class="fas fa-envelope text-success me-1"></i> Richiedi informazioni
+            </a>
+          </li>
+
+          <!-- Altri link -->
+          <li class="nav-item">
+            <a class="nav-link " href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="servizi.html">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="professionisti.html">Professionisti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="prenota.html">Prenota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contatti.html">Contatti</a>
+          </li>
+<li class="nav-item">
+            <a class="nav-link" href="/html/areaPersonale.html">Area Personale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/blog.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+
+
+ 
+
+<!-- ------------- --------------------------------------------SEZIONE PRENOTAZIONE  -->
+<section class="py-5 bg-lightblue text-center">
+  <div class="container">
+    <h1 class="fw-bold mb-3 mappa">Prenota la tua visita</h1>
+    <p class="lead text-muted mb-5">
+      Scegli la specialità e il medico, poi seleziona la data e l’orario per fissare il tuo appuntamento.
+    </p>
+
+    <!-- FORM PRENOTAZIONE -->
+    <form id="formPrenotazione" class="bg-light p-4 rounded shadow-sm text-start mx-auto" style="max-width:600px;">
+      
+      <!-- SELEZIONE SPECIALITÀ -->
+      <div class="mb-3">
+        <label for="selectSpecialita" class="form-label fw-semibold">Specialità</label>
+        <select id="selectSpecialita" class="form-select" required>
+          <option value="">-- Seleziona la specialità --</option>
+          <option value="ortopedia">Ortopedia</option>
+          <option value="otorinolaringoiatria">Otorinolaringoiatria</option>
+          <option value="neurologia">Neurologia</option>
+          <option value="oncologia">Oncologia</option>
+          <option value="cardiologia">Cardiologia</option>
+          <option value="pediatria">Pediatria</option>
+          <option value="ginecologia">Ginecologia</option>
+          <option value="chirurgia-plastica">Chirurgia Plastica</option>
+          <option value="dermatologia">Dermatologia</option>
+        </select>
+      </div>
+
+      <!-- SELEZIONE MEDICO -->
+      <div class="mb-3">
+        <label for="selectMedico" class="form-label fw-semibold">Medico</label>
+        <select id="selectMedico" class="form-select" required>
+          <option value="">-- Seleziona il medico --</option>
+        </select>
+      </div>
+
+<!-- CARD IN MEDICO -->
+<div id="cardMedico" class="card shadow-sm border-0 mb-4 d-none" style="background-color:#f8fbff;">
+  <div class="row g-0 align-items-center">
+    <div class="col-md-3 text-center">
+      <img id="fotoMedicoCard" src="" alt="" class="img-fluid rounded-start p-2" style="max-height:150px;">
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <h5 id="nomeMedicoCard" class="card-title mb-1"></h5>
+        <p id="descrizioneMedicoCard" class="card-text small text-muted mb-1"></p>
+        <p id="ricevimentoMedicoCard" class="card-text small fw-semibold text-primary mb-0"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- DATA -->
+<div class="mb-3">
+  <label for="dataPrenotazione" class="form-label fw-semibold">Data</label>
+  <input type="text" id="dataPrenotazione" class="form-control" placeholder="Seleziona una data" required>
+</div>
+
+
+      <!-- ORA -->
+<div class="mb-4">
+  <label for="oraPrenotazione" class="form-label fw-semibold">Orario</label>
+  <select id="oraPrenotazione" class="form-select" required>
+    <option value="">-- Seleziona orario --</option>
+  </select>
+</div>
+
+      <!-- Mail cliente a cui verrsà inviata la mail di confermka -->
+<div class="mb-3">
+  <label for="emailCliente" class="form-label fw-semibold">Email per la conferma</label>
+  <input type="email" id="emailCliente" name="emailCliente" class="form-control" placeholder="es. mario.rossi@email.com" required>
+</div>
+
+
+      <!-- PULSANTI -->
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success">Conferma prenotazione</button>
+        <button type="button" id="btnCancella" class="btn btn-outline-danger">Cancella</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+<!-------------------------------------------------------------------------------------SCRIPT GESTIONE PRENOTAZIONE --------------------------------------------------------------------------------------- -->
+
+<script>
+  // ---- ELEMENTI
+  const selectSpecialita = document.getElementById('selectSpecialita');
+  const selectMedico = document.getElementById('selectMedico');
+  const inputData = document.getElementById('dataPrenotazione');
+  const inputOra  = document.getElementById('oraPrenotazione');
+
+  const params = new URLSearchParams(location.search);
+  let medicoSelezionato = (params.get('medico') || '').toLowerCase();
+  let specialitaSelezionata = (params.get('specialita') || '').toLowerCase();
+
+  let calendario; // flatpickr instance
+
+  // aggregati di medici per disciplina
+  const medici = {
+    ortopedia: [
+      { nome: 'Dr. Marco Rossi', valore: 'rossi' },
+      { nome: 'Dr.ssa Laura Bianchi', valore: 'bianchi' },
+      { nome: 'Dr. Luca Verdi', valore: 'verdi' }
+    ],
+    otorinolaringoiatria: [
+      { nome: 'Dr. Mario Azzurro', valore: 'azzurro' },
+      { nome: 'Dr.ssa Lara Mazza',  valore: 'mazza'  },
+      { nome: 'Dr. Bruno Anselmi',  valore: 'anselmi'}
+    ],
+    neurologia: [
+      { nome: 'Dr. Mario Azzurri',  valore: 'azzurri'},
+      { nome: 'Dr.ssa Laura Mori',  valore: 'mori'   },
+      { nome: 'Dr. Aldo Bruna',     valore: 'bruna'  }
+    ],
+    oncologia: [
+      { nome: 'Dr. Fabio Sampo',    valore: 'sampo'  },
+      { nome: 'Dr.ssa Maura Luona', valore: 'luona'  },
+      { nome: 'Dr. Bruno Cucci',    valore: 'cucci'  }
+    ],
+    cardiologia: [
+      { nome: 'Dr. Paolo Sampi',    valore: 'sampi'  },
+      { nome: 'Dr.ssa Sandra Messina', valore: 'messina' },
+      { nome: 'Dr. Lillo Bodelli',  valore: 'bodelli'}
+    ],
+    pediatria: [
+      { nome: 'Dr.ssa Fabia Veretti', valore: 'veretti'},
+      { nome: 'Dr.ssa Monica Cotta',  valore: 'cotta'  },
+      { nome: 'Dr. Claudio Sulano',   valore: 'sulano' }
+    ],
+    ginecologia: [
+      { nome: 'Dr. Federico Callo', valore: 'callo' },
+      { nome: 'Dr.ssa Sandra Sularo', valore: 'sularo' },
+      { nome: 'Dr. Massimo Lallo',  valore: 'lallo' }
+    ],
+    'chirurgia-plastica': [
+      { nome: 'Dr. Corrado Bistefanis', valore: 'bistefanis' },
+      { nome: 'Dr.ssa Sara Varetto',    valore: 'varetto'    },
+      { nome: 'Dr.ssa Maria Milo',      valore: 'milo'       }
+    ],
+    dermatologia: [
+      { nome: 'Dr. Gian Paolo Ville',  valore: 'ville'     },
+      { nome: 'Dr.ssa Giulia Boccovani', valore: 'boccovani'},
+      { nome: 'Dr. Roberto Ghigliola', valore: 'ghigliola' }
+    ]
+  };
+
+ 
+ //orari e giorni medice
+const disponibilita = {
+
+  // ORTOPEDIA
+  rossi:   { giorni:[1,4], orari:["14:00","14:30","15:00","15:30","16:00","16:30","17:00"] }, // Lunedì e Giovedì pomeriggio
+  bianchi: { giorni:[2],   orari:["09:00","09:30","10:00","10:30","11:00","11:30"] }, // Martedì mattina
+  verdi:   { giorni:[3],   orari:["14:00","14:30","15:00","15:30","16:00","16:30"] }, // Mercoledì pomeriggio
+
+  // OTORINOLARINGOIATRIA
+  azzurro: { giorni:[4],   orari:["08:30","09:00","09:30","10:00","10:30","11:00","11:30"] }, // Giovedì mattina
+  mazza:   { giorni:[5],   orari:["09:00","09:30","10:00","10:30","11:00","11:30"] }, // Venerdì mattina
+  anselmi: { giorni:[1],   orari:["14:00","14:30","15:00","15:30","16:00","16:30"] }, // Lunedì pomeriggio
+
+  // NEUROLOGIA
+  azzurri: { giorni:[2],   orari:["14:00","14:30","15:00","15:30","16:00","16:30"] }, // Martedì pomeriggio
+  mori:    { giorni:[3],   orari:["09:00","09:30","10:00","10:30","11:00","11:30"] }, // Mercoledì mattina
+  bruna:   { giorni:[4],   orari:["14:00","14:30","15:00","15:30","16:00"] }, // Giovedì pomeriggio
+
+  // ONCOLOGIA
+  sampo:   { giorni:[5],   orari:["14:00","14:30","15:00","15:30","16:00","16:30"] }, // Venerdì pomeriggio
+  luona:   { giorni:[2],   orari:["14:00","14:30","15:00","15:30","16:00"] }, // Martedì pomeriggio
+  cucci:   { giorni:[4],   orari:["09:00","09:30","10:00","10:30","11:00"] }, // Giovedì mattina
+
+  // CARDIOLOGIA
+  sampi:   { giorni:[1],   orari:["09:00","09:30","10:00","10:30","11:00","11:30"] }, // Lunedì mattina
+  messina: { giorni:[3],   orari:["14:00","14:30","15:00","15:30","16:00","16:30"] }, // Mercoledì pomeriggio
+  bodelli: { giorni:[5],   orari:["09:00","09:30","10:00","10:30","11:00"] }, // Venerdì mattina
+
+  // PEDIATRIA
+  veretti: { giorni:[2],   orari:["09:00","09:30","10:00","10:30","11:00"] }, // Martedì mattina
+  cotta:   { giorni:[4],   orari:["09:00","09:30","10:00","10:30","11:00"] }, // Giovedì mattina
+  sulano:  { giorni:[5],   orari:["14:00","14:30","15:00","15:30","16:00"] }, // Venerdì pomeriggio
+
+  // GINECOLOGIA
+  callo:   { giorni:[1],   orari:["14:00","14:30","15:00","15:30","16:00"] }, // Lunedì pomeriggio
+  sularo:  { giorni:[3],   orari:["09:00","09:30","10:00","10:30","11:00"] }, // Mercoledì mattina
+  lallo:   { giorni:[4],   orari:["14:00","14:30","15:00","15:30","16:00"] }, // Giovedì pomeriggio
+
+  // CHIRURGIA PLASTICA
+  bistefanis:{ giorni:[2], orari:["14:00","14:30","15:00","15:30","16:00","16:30"] }, // Martedì pomeriggio
+  varetto:   { giorni:[5], orari:["09:00","09:30","10:00","10:30","11:00"] }, // Venerdì mattina
+  milo:      { giorni:[1], orari:["09:00","09:30","10:00","10:30","11:00"] }, // Lunedì mattina
+
+  // ERMATOLOGIA
+  ville:     { giorni:[2], orari:["09:00","09:30","10:00","10:30","11:00"] }, // Martedì mattina
+  boccovani: { giorni:[3], orari:["14:00","14:30","15:00","15:30","16:00"] }, // Mercoledì pomeriggio
+  ghigliola: { giorni:[4], orari:["09:00","09:30","10:00","10:30","11:00"] }  // Giovedì mattina
+};
+
+
+
+  // ---- UTIL
+  function aggiornaSelectMedici() {
+    const spec = selectSpecialita.value;
+    selectMedico.innerHTML = '<option value="">-- Seleziona il medico --</option>';
+    if (medici[spec]) {
+      medici[spec].forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.valore;
+        opt.textContent = m.nome;
+        selectMedico.appendChild(opt);
+      });
+    }
+  }
+
+  // Dato un "medico" (slug), trova la specialità che lo contiene
+  function trovaSpecialitaDaMedico(slugMedico) {
+    slugMedico = (slugMedico || '').toLowerCase();
+    for (const spec in medici) {
+      if (medici[spec].some(m => m.valore.toLowerCase() === slugMedico)) {
+        return spec;
+      }
+    }
+    return null;
+  }
+
+  function initCalendario(giorniValidi) {
+    if (typeof flatpickr === 'undefined') {
+      console.warn('Flatpickr non caricato: uso <input type="date"> nativo.');
+      return;
+    }
+    if (calendario) calendario.destroy();
+
+    const oggi = new Date();
+    const max  = new Date(); max.setMonth(oggi.getMonth() + 6);
+
+    calendario = flatpickr("#dataPrenotazione", {
+      dateFormat: "Y-m-d",
+      minDate: oggi,
+      maxDate: max,
+      locale: "it",
+      disable: [ d => !giorniValidi.includes(d.getDay()) ],
+      onChange: (_, dateStr) => aggiornaOrari(dateStr),
+      onDayCreate: (dObj, dStr, fp, dayElem) => {
+        const day = dayElem.dateObj.getDay();
+        if (!giorniValidi.includes(day)) {
+          dayElem.style.backgroundColor = "#444";
+          dayElem.style.color = "#999";
+          dayElem.style.opacity = "0.6";
+          dayElem.style.cursor = "not-allowed";
+        } else {
+          dayElem.style.backgroundColor = "#e8f6ff";
+          dayElem.style.borderRadius = "6px";
+        }
+      }
+    });
+  }
+
+  // -------------------------------------------------------------------------------- BLOCCA ORARI GIÀ PRENOTATI 
+async function aggiornaOrari(dateStr) {
+  const medicoSlug = selectMedico.value;
+  const medicoNome = selectMedico.options[selectMedico.selectedIndex]?.text || "";
+  inputOra.innerHTML = '<option value="">-- Seleziona orario --</option>';
+
+  if (!medicoSlug || !disponibilita[medicoSlug] || !dateStr) return;
+
+  const d = new Date(dateStr);
+  const giorno = d.getDay();
+  if (!disponibilita[medicoSlug].giorni.includes(giorno)) return;
+
+  let orariOccupati = [];
+
+  // Legge dal database le prenotazioni per quel medico e quella data
+  try {
+    const q = window.query(
+      window.collection(window.db, "prenotazioni"),
+      window.where("medico", "==", medicoNome),
+      window.where("data", "==", dateStr)
+    );
+    const snapshot = await window.getDocs(q);
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      if (data?.ora) orariOccupati.push(data.ora);
+    });
+    console.log("Orari occupati:", orariOccupati);
+  } catch (err) {
+    console.error("Errore recupero orari occupati:", err);
+  }
+
+  // Cre la tendina orari e disabilita quellli già preniotati
+  disponibilita[medicoSlug].orari.forEach(o => {
+    const opt = document.createElement("option");
+    opt.value = o;
+    if (orariOccupati.includes(o)) {
+      opt.textContent = `${o} — Occupato`;
+      opt.disabled = true;
+      opt.style.color = "#999";
+    } else {
+      opt.textContent = o;
+    }
+    inputOra.appendChild(opt);
+  });
+}
+
+
+  // ---- EVENTI
+  selectSpecialita.addEventListener('change', () => {
+    aggiornaSelectMedici();
+    // reset calendario e orari quando cambio specialità
+    if (calendario) calendario.destroy();
+    inputData.value = '';
+    inputOra.innerHTML = '<option value="">-- Seleziona orario --</option>';
+  });
+
+  selectMedico.addEventListener('change', () => {
+    const medico = selectMedico.value;
+    if (!medico || !disponibilita[medico]) return;
+    initCalendario(disponibilita[medico].giorni);
+    inputOra.innerHTML = '<option value="">-- Seleziona orario --</option>';
+  });
+
+  // ---- INIZIALIZZAZIONE
+  window.addEventListener('DOMContentLoaded', () => {
+    // Caso: arrivo con SOLO ?medico=...
+    if (medicoSelezionato && !specialitaSelezionata) {
+      const spec = trovaSpecialitaDaMedico(medicoSelezionato);
+      if (spec) specialitaSelezionata = spec;
+    }
+
+    if (specialitaSelezionata) {
+      // imposta specialità e popola medici
+      selectSpecialita.value = specialitaSelezionata;
+      aggiornaSelectMedici();
+    }
+
+    if (medicoSelezionato) {
+      // imposta medico
+      selectMedico.value = medicoSelezionato;
+    }
+
+    // Se entrambi presenti, blocco le tendine e preparo calendario+orari
+    if (specialitaSelezionata && medicoSelezionato) {
+      selectSpecialita.disabled = true;
+      selectMedico.disabled = true;
+      if (disponibilita[medicoSelezionato]) {
+        initCalendario(disponibilita[medicoSelezionato].giorni);
+      }
+    }
+  });
+// ===================== CARD MEDICO =====================
+const cardMedico = document.getElementById("cardMedico");
+const fotoMedicoCard = document.getElementById("fotoMedicoCard");
+const nomeMedicoCard = document.getElementById("nomeMedicoCard");
+const descrizioneMedicoCard = document.getElementById("descrizioneMedicoCard");
+const ricevimentoMedicoCard = document.getElementById("ricevimentoMedicoCard");
+
+// Piccolo archivio con le info principali
+const infoMedici = {
+  // ORTOPEDIA
+  rossi:   { nome: "Dr. Marco Rossi", descr: "Specialista in Ortopedia e Traumatologia. Si occupa di anca, ginocchio e colonna vertebrale con approccio mininvasivo.", foto: "/assets/img/medicoUomo.jpg", riceve: "Lunedì e Giovedì pomeriggio" },
+  bianchi: { nome: "Dott.ssa Laura Bianchi", descr: "Esperta in chirurgia ortopedica mininvasiva.", foto: "/assets/img/medicoDonna.jpg", riceve: "Martedì mattina" },
+  verdi:   { nome: "Dr. Luca Verdi", descr: "Riabilitazione ortopedica e medicina dello sport.", foto: "/assets/img/medicoUomo.jpg", riceve: "Mercoledì pomeriggio" },
+
+  // OTORINOLARINGOIATRIA
+  azzurro: { nome: "Dr. Mario Azzurro", descr: "Specialista in disturbi dell’equilibrio e vertigini.", foto: "/assets/img/medicoUomo.jpg", riceve: "Giovedì mattina" },
+  mazza:   { nome: "Dott.ssa Lara Mazza", descr: "Esperta in apnee notturne e russamento.", foto: "/assets/img/medicoDonna.jpg", riceve: "Venerdì mattina" },
+  anselmi: { nome: "Dr. Bruno Anselmi", descr: "Patologie del naso e dei seni paranasali.", foto: "/assets/img/medicoUomo.jpg", riceve: "Lunedì pomeriggio" },
+
+  // NEUROLOGIA
+  azzurri: { nome: "Dr. Mario Azzurri", descr: "Specialista in Epilessia e disturbi convulsivi.", foto: "/assets/img/medicoUomo.jpg", riceve: "Martedì pomeriggio" },
+  mori:    { nome: "Dott.ssa Laura Mori", descr: "Esperta in malattie neurodegenerative.", foto: "/assets/img/medicoDonna.jpg", riceve: "Mercoledì mattina" },
+  bruna:   { nome: "Dr. Aldo Bruna", descr: "Cefalee ed emicranie croniche.", foto: "/assets/img/medicoUomo.jpg", riceve: "Giovedì pomeriggio" },
+
+  // ONCOLOGIA
+  sampo:   { nome: "Dr. Fabio Sampo", descr: "Specialista in tumori del seno.", foto: "/assets/img/medicoUomo.jpg", riceve: "Venerdì pomeriggio" },
+  luona:   { nome: "Dott.ssa Maura Luona", descr: "Esperta in tumori gastrointestinali.", foto: "/assets/img/medicoDonna.jpg", riceve: "Martedì pomeriggio" },
+  cucci:   { nome: "Dr. Bruno Cucci", descr: "Specialista in oncologia polmonare.", foto: "/assets/img/medicoUomo.jpg", riceve: "Giovedì mattina" },
+
+  // CARDIOLOGIA
+  sampi:   { nome: "Dr. Paolo Sampi", descr: "Specialista in ipertensione arteriosa.", foto: "/assets/img/medicoUomo.jpg", riceve: "Lunedì mattina" },
+  messina: { nome: "Dott.ssa Sandra Messina", descr: "Esperta in scompenso cardiaco.", foto: "/assets/img/medicoDonna.jpg", riceve: "Mercoledì pomeriggio" },
+  bodelli: { nome: "Dr. Lillo Bodelli", descr: "Prevenzione cardiovascolare e stili di vita.", foto: "/assets/img/medicoUomo.jpg", riceve: "Venerdì mattina" },
+
+  // PEDIATRIA
+  veretti: { nome: "Dott.ssa Fabia Veretti", descr: "Specialista in controlli di crescita e sviluppo.", foto: "/assets/img/medicoDonna.jpg", riceve: "Martedì mattina" },
+  cotta:   { nome: "Dott.ssa Monica Cotta", descr: "Esperta in vaccinazioni e prevenzione.", foto: "/assets/img/medicoDonna.jpg", riceve: "Giovedì mattina" },
+  sulano:  { nome: "Dr. Claudio Sulano", descr: "Malattie respiratorie pediatriche.", foto: "/assets/img/medicoUomo.jpg", riceve: "Venerdì pomeriggio" },
+
+  // GINECOLOGIA
+  callo:   { nome: "Dr. Federico Callo", descr: "Specialista in fertilità e PMA (Procreazione Medicalmente Assistita).", foto: "/assets/img/medicoUomo.jpg", riceve: "Lunedì pomeriggio" },
+  sularo:  { nome: "Dott.ssa Sandra Sularo", descr: "Esperta in menopausa e disturbi ormonali.", foto: "/assets/img/medicoDonna.jpg", riceve: "Mercoledì mattina" },
+  lallo:   { nome: "Dr. Massimo Lallo", descr: "Pap test e prevenzione tumore al collo dell’utero.", foto: "/assets/img/medicoUomo.jpg", riceve: "Giovedì pomeriggio" },
+
+  // CHIRURGIA PLASTICA
+  bistefanis: { nome: "Dr. Corrado Bistefanis", descr: "Specialista in ricostruzione post-trauma o post-tumore.", foto: "/assets/img/medicoUomo.jpg", riceve: "Martedì pomeriggio" },
+  varetto:    { nome: "Dott.ssa Sara Varetto", descr: "Esperta in chirurgia estetica del volto.", foto: "/assets/img/medicoDonna.jpg", riceve: "Venerdì mattina" },
+  milo:       { nome: "Dott.ssa Maria Milo", descr: "Liposuzione e rimodellamento corporeo.", foto: "/assets/img/medicoDonna.jpg", riceve: "Lunedì mattina" },
+
+  // DERMATOLOGIA
+  ville:      { nome: "Dr. Gian Paolo Ville", descr: "Specialista in acne e dermatite seborroica.", foto: "/assets/img/medicoUomo.jpg", riceve: "Martedì mattina" },
+  boccovani:  { nome: "Dott.ssa Giulia Boccovani", descr: "Esperta in controllo dei nei e prevenzione melanoma.", foto: "/assets/img/medicoDonna.jpg", riceve: "Mercoledì pomeriggio" },
+  ghigliola:  { nome: "Dr. Roberto Ghigliola", descr: "Tratta psoriasi, eczema e patologie croniche della pelle.", foto: "/assets/img/medicoUomo.jpg", riceve: "Giovedì mattina" }
+};
+
+
+// Funzione per mostrare la card
+function mostraCardMedico(slug) {
+  const m = infoMedici[slug];
+  if (!m) {
+    cardMedico.classList.add("d-none");
+    return;
+  }
+  fotoMedicoCard.src = m.foto;
+  nomeMedicoCard.textContent = m.nome;
+  descrizioneMedicoCard.textContent = m.descr;
+  ricevimentoMedicoCard.textContent = "Riceve: " + m.riceve;
+
+  // effetto fade-in
+  cardMedico.classList.remove("d-none");
+  cardMedico.style.opacity = 0;
+  setTimeout(() => cardMedico.style.transition = "opacity 0.4s", 10);
+  setTimeout(() => cardMedico.style.opacity = 1, 50);
+}
+
+// Mostra automaticamente se arrivo da professionisti
+window.addEventListener("DOMContentLoaded", () => {
+  if (medicoSelezionato && infoMedici[medicoSelezionato]) {
+    mostraCardMedico(medicoSelezionato);
+  }
+});
+
+// Mostra se scelgo il medico manualmente
+selectMedico.addEventListener("change", () => {
+  const medico = selectMedico.value;
+  if (medico && infoMedici[medico]) {
+    mostraCardMedico(medico);
+  } else {
+    cardMedico.classList.add("d-none");
+  }
+});
+
+ // ---- SUBMIT: SALVATAGGIO PRENOTAZIONE ----
+document.getElementById('formPrenotazione').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const emailCliente = document.getElementById('emailCliente')?.value?.trim() || "";
+  const medicoSelezionato = selectMedico.options[selectMedico.selectedIndex]?.text || "";
+  const specialitaSelezionata = selectSpecialita.options[selectSpecialita.selectedIndex]?.text || "";
+  const dataPren = inputData?.value?.trim();
+  const oraPren = inputOra?.value?.trim();
+
+  // Controllo che data e ora siano compilate
+  if (!dataPren || !oraPren) {
+    Swal.fire({
+      icon: "warning",
+      title: "Attenzione",
+      text: "Seleziona una data e un orario prima di confermare la prenotazione."
+    });
+    return;
+  }
+
+  // Salvataggio locale (localStorage)
+  const prenotazione = {
+    specialita: specialitaSelezionata,
+    medico: medicoSelezionato,
+    data: dataPren,
+    ora: oraPren
+  };
+  localStorage.setItem('prenotazione', JSON.stringify(prenotazione));
+
+  // INVIO EMAIL di conferma (EmailJS)
+  const templateParams = {
+    email: emailCliente,
+    medico: medicoSelezionato,
+    specialita: specialitaSelezionata,
+    data: dataPren,
+    ora: oraPren
+  };
+
+  try {
+    // Mostra subito un loader elegante
+  Swal.fire({
+    title: "Invio prenotazione...",
+    html: `
+      <div class="spinner-border text-success mb-3" role="status"></div>
+      <p>Attendere qualche istante</p>
+    `,
+    allowOutsideClick: false,
+    showConfirmButton: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
+    await emailjs.send("service_187ywqv", "template_zkzj60a", templateParams);
+
+    Swal.fire({
+      icon: "success",
+      title: "Prenotazione confermata!",
+      html: `
+        <p>È stata inviata una mail di conferma all'indirizzo <b>${emailCliente}</b>.</p>
+        <hr>
+        <p><b>${specialitaSelezionata}</b> con <b>${medicoSelezionato}</b></p>
+        <p><b>${dataPren}</b> alle <b>${oraPren}</b></p>
+      `,
+      timer: 4000,
+      showConfirmButton: false
+    });
+
+    // Reset completo del modulo
+    document.getElementById("formPrenotazione").reset();
+    localStorage.removeItem("prenotazione");
+
+    // Nasconde la card del medico
+    const cardMedico = document.getElementById("cardMedico");
+    if (cardMedico) cardMedico.classList.add("d-none");
+
+    // Riabilita le selezioni
+    selectSpecialita.disabled = false;
+    selectMedico.disabled = false;
+
+    // Distrugge il calendario
+    if (calendario) calendario.destroy();
+
+  } catch (error) {
+    console.error("Errore invio email:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Errore nell'invio della mail",
+      text: "La prenotazione è stata registrata, ma si è verificato un problema nell'invio dell'email."
+    });
+  }
+
+  // SALVATAGGIO SU FIRESTORE
+  if (window.db && emailCliente) {
+    try {
+      await window.addDoc(window.collection(window.db, "prenotazioni"), {
+        email: emailCliente,
+        medico: medicoSelezionato,
+        specialita: specialitaSelezionata,
+        data: dataPren,
+        ora: oraPren,
+        timestamp: window.serverTimestamp()
+      });
+      console.log("Prenotazione salvata su Firestore!");
+    } catch (error) {
+      console.error("Errore salvataggio Firestore:", error);
+      Swal.fire("Errore nel salvataggio della prenotazione sul database.");
+    }
+  } else {
+    console.warn("Firebase non inizializzato o email mancante, prenotazione non salvata nel database.");
+  }
+});
+
+ // <-- chiusura cancella
+// ---- CANCELLA FORM ----
+document.getElementById("btnCancella").addEventListener("click", () => {
+  // Reset completo del form
+  document.getElementById("formPrenotazione").reset();
+
+  // Rimuove eventuali dati salvati localmente
+  localStorage.removeItem("prenotazione");
+
+  // Riabilita le tendine
+  selectSpecialita.disabled = false;
+  selectMedico.disabled = false;
+
+  // Distrugge il calendario se presente
+  if (calendario) calendario.destroy();
+
+  // Nasconde la card del medico
+  const cardMedico = document.getElementById("cardMedico");
+  if (cardMedico) cardMedico.classList.add("d-none");
+
+  // Mostra notifica visiva (mobile-friendly)
+  Swal.fire({
+    icon: "info",
+    title: "Modulo cancellato",
+    text: "Tutti i campi sono stati azzerati.",
+    timer: 2000,
+    showConfirmButton: false
+  });
+});
+
+</script>
+
+
+
+
+
+  <!----------------------------------------------------------------------- footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+<footer class=" text-dark pt-4 ">
+  <div class="container-xl bg-lightblue border-top px-4">
+    <div class="row gy-4 text-center text-md-start">
+
+      <!-- COL 1: SOCIAL -->
+      <div class="col-12 col-md-3">
+        <h6 class="fw-bold titfooter">SOCIAL</h6>
+        <a href="https://facebook.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+          <i class="fab fa-facebook-f me-2"></i> Facebook
+        </a>
+        <a href="https://instagram.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+          <i class="fab fa-instagram me-2"></i> Instagram
+        </a>
+        <a href="https://linkedin.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+          <i class="fab fa-linkedin me-2"></i> LinkedIn
+        </a>
+        <!-- pulsante condividi-->
+<button id="shareBtn" class="btn btn-outline-primary">
+  <i class="fas fa-share-alt me-2"></i>Condividi
+</button>
+      </div>
+
+      <!-- COL 2: CONTATTI -->
+      <div class="col-12 col-md-3">
+        <h6 class="fw-bold titfooter">CONTATTI</h6>
+        <p class="mb-1">
+          <i class="fas fa-phone-alt text-success me-2"></i>
+          <a href="tel:+390123456789" class="text-muted text-decoration-none footer-link">3923688757</a>
+        </p>
+        <p class="mb-1">
+          <i class="fas fa-envelope text-success me-2"></i>
+          <a href="../index.html#form-prenotazioni" class="text-muted text-decoration-none footer-link">Richiedi informazioni</a>
+        </p>
+      </div>
+
+      <!-- COL 3: LEGALI -->
+      <div class="col-12 col-md-3">
+        <h6 class="fw-bold titfooter">INFORMAZIONI</h6>
+        <p class="mb-1">P.IVA 12345678901</p>
+        <a href="/html/noteLegalii.html" class="text-muted text-decoration-none d-block footer-link" target="_blank">Note legali</a>
+        <a href="/html/privacyEcookies.html" class="text-muted text-decoration-none d-block footer-link">Privacy & Cookie</a>
+         <p class="text-center text-muted small mt-4">
+            ⚠️ Questo sito è una demo realizzata a scopo didattico.
+            I contenuti, nomi e indirizzi sono puramente fittizi.
+          </p>
+      </div>
+
+      <!-- COL 4: LOGO & COPYRIGHT -->
+      <div class="col-12 col-md-3 text-md-end text-center">
+        <a class="navbar-brand sfondo d-inline-block mb-2" href="/assets/img/clinica.png" target="_blank">
+          <img src="/assets/img/logoClinica.png" alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online" width="100">
+        </a>
+        <p class="small text-muted">© 2025 Clinica Privata. Tutti i diritti riservati.</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<!----------------------------------------------------------------------- fine footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <!-- Script JS personalizzato -->
+  <script src="/js/index.js"></script>
+
+
+
+  <!-------------------------------------------------------------------------------------------Connetto  Firebase SDK -->
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  //--------------------------------------------------------------------------------------------inizio modifica orario
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  where,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  // Configurazione Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyA5Fj88YjMi6Krjc6k_zHWRsdTmBBmZ0fU",
+    authDomain: "login-clinica-demo.firebaseapp.com",
+    projectId: "login-clinica-demo",
+    storageBucket: "login-clinica-demo.appspot.com",
+    messagingSenderId: "865606471743",
+    appId: "1:865606471743:web:ceab28c96147f864dda88a",
+    measurementId: "G-LKY5ZE1GHP"
+  };
+
+  // Inizializza Firebase + Firestore
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Rendi db visibile globalmente
+  window.db = db;
+  window.addDoc = addDoc;
+  window.collection = collection;
+  window.serverTimestamp = serverTimestamp;
+  window.getDocs = getDocs;
+window.query = query;
+window.where = where;
+
+</script>
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA5Fj88YjMi6Krjc6k_zHWRsdTmBBmZ0fU",
+    authDomain: "login-clinica-demo.firebaseapp.com",
+    projectId: "login-clinica-demo",
+    storageBucket: "login-clinica-demo.appspot.app",
+    messagingSenderId: "865606471743",
+    appId: "1:865606471743:web:ceab28c96147f864dda88a",
+    measurementId: "G-LKY5ZE1GHP"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  const db = firebase.firestore();
+
+</script> -->
+    <!-------------------------------------------------------------------------------------------Connetto  Firebase SDK -->
+</body>
+
+</html>

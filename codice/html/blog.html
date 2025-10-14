@@ -1,0 +1,739 @@
+<!-- 
+  Progetto: Clinica Privata Torino
+  Autore: Simone Sugliano
+  Descrizione: Sito dimostrativo full responsive con gestione prenotazioni, database e ottimizzazione SEO.
+  Tecnologie: HTML5, CSS3, JavaScript, Bootstrap, Firebase
+  Data: Ottobre 2025
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <!-- META BASE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog Salute - Clinica Privata Torino | Approfondimenti e Consigli Medici</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Approfondimenti medici e consigli di salute dai professionisti della Clinica Privata di Torino. Leggi gli articoli su ortopedia, ginecologia, cardiologia e altre specialità.">
+  <meta name="keywords" content="blog salute Torino, articoli medici, approfondimenti sanitari, clinica privata Torino, prevenzione, consigli salute, visite specialistiche">
+  <meta name="author" content="Clinica Privata S.r.l.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Blog Salute - Clinica Privata Torino">
+  <meta property="og:description" content="Scopri gli approfondimenti medici e i consigli di prevenzione della Clinica Privata di Torino. Leggi gli articoli scritti dai nostri specialisti.">
+  <meta property="og:image" content="https://democlinicaprivata.altervista.org/assets/img/blog-cover.jpg">
+  <meta property="og:url" content="https://democlinicaprivata.altervista.org/html/blog.html">
+  <meta property="og:type" content="article">
+
+  <!-- CANONICAL + FAVICON -->
+  <link rel="canonical" href="https://democlinicaprivata.altervista.org/html/blog.html">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+  <!-- ALTRI META -->
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="it">
+
+
+  <!----------------------------------------------------------------------------------------------------------link-->
+  <!-------------------------------------------------------------------------------------------------------- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!---------------------------------------------------------------------------------------------------------- Font Avesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!---------------------------------------------------------------------------------------------------------- File CSS personalizzato -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!---------------------------------------------------------------------------------------------------------- script cookies iubenda -->
+  <script type="text/javascript"
+    src="https://embeds.iubenda.com/widgets/7a470f35-9785-4723-8fd0-7e14a683250d.js"></script>
+
+  <!----------------------------------------------------------------------------------------------------------FINE link-->
+
+</head>
+
+<body id="top">
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+  <!-- Navbar full-width, elegante e responsive -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light pt-0">
+    <div class="container-xl bg-lightblue shadow-sm px-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand sfondo" href="/assets/img/logoClinica.png" target="_blank">
+        <img src="/assets/img/logoClinica.png" alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online"
+ width="100" class="d-inline-block">
+      </a>
+
+      <!-- Bottone hamburger per mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Link della navbar -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav">
+          <!-- toggle tema scuro/chiar-->
+          <li class="nav-item d-flex align-items-center me-3">
+            <button id="theme-toggle" class="btn btn-outline-secondary rounded-circle p-2" title="Cambia tema">
+              <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+          </li>
+
+          <!-- Chiamata rapida -->
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+390123456789" aria-label="Chiama la clinica">
+              <i class="fas fa-phone-alt text-success me-1"></i> 3923688757
+            </a>
+          </li>
+
+          <!-- Info mail -->
+          <li class="nav-item">
+            <a class="nav-link" href="#form-prenotazioni">
+              <i class="fas fa-envelope text-success me-1"></i> Richiedi informazioni
+            </a>
+          </li>
+
+          <!-- Altri link -->
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/servizi.html">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/professionisti.html">Professionisti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/prenota.html">Prenota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/contatti.html">Contatti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/areaPersonale.html">Area Personale</a>
+          </li>
+          <li class="nav-item">
+  <a class="nav-link active" href="/html/blog.html">Blog</a>
+</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------------------------------------------------fine navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+
+  <!----------------------------------------------------------------------------------------------hero---------------------------------------------------------------------------------------------------------->
+  <div class="container-xl p-0">
+    <section class="hero d-flex flex-column justify-content-end text-center m-0">
+      <div>
+        <h1 class="display-4">Clinica Privata Torino</h1>
+      </div>
+      <!-- Orari e Indirizzo -->
+      <div class="d-flex justify-content-between px-4 py-3 w-100">
+        <div class="fw-bold text-start">
+          ORARI<br>Lun–Ven: 8:00–19:00
+        </div>
+        <div class="fw-bold text-end">
+          INDIRIZZO<br>Via Roma 123 – Torino
+        </div>
+      </div>
+    </section>
+  </div>
+  <!----------------------------------------------------------------------------------------------fine hero---------------------------------------------------------------------------------------------------------->
+  
+
+
+  <!----------------------------------------------------------------------------------------------selezione categoria articoli---------------------------------------------------------------------------------------------------------->
+
+<div class="text-center mb-4 pt-5 fs-4">
+  <label for="filtroSpecialita" class="form-label fw-semibold me-2">Filtra per specialità:</label>
+  <select id="filtroSpecialita" class="form-select d-inline-block" style="max-width:250px;">
+    <option value="tutte">Tutte</option>
+    <option value="ortopedia">ortopedia</option>
+    <option value="otorinolaringoiatria">otorinolaringoiatria</option>
+    <option value="neurologia">neurologia</option>
+    <option value="oncologia">oncologia</option>
+    <option value="cardiologia">cardiologia</option>
+    <option value="pediatria">pediatria</option>
+    <option value="ginecologia">ginecologia</option>
+    <option value="chirurgia-plastica">chirurgia Plastica</option>
+    <option value="dermatologia">dermatologia</option>
+  </select>
+</div>
+  <!----------------------------------------------------------------------------------------------fine selezione categoria articoli---------------------------------------------------------------------------------------------------------->
+  
+  <!---------------------------------------------------------------------------------------------- articoli---------------------------------------------------------------------------------------------------------->
+ <section class="container py-5">
+  <h1 class="fw-bold text-center mb-4">Approfondimenti Sanitari</h1>
+  <p class="text-center text-muted mb-5">Leggi gli articoli scritti dai nostri professionisti per informarti e prenderti cura della tua salute.</p>
+
+  <div class="row g-4">
+    <!-- Card articolo -->
+   <!-- ORTOPEDIA -->
+<div class="col-md-6 col-lg-4" data-specialita="ortopedia">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/ortopedia.png" class="card-img-top" alt="Visita ortopedica per dolori articolari e diagnosi precoce di problemi muscoloscheletrici">
+    <div class="card-body">
+      <h5 class="card-title">Quando rivolgersi all’ortopedico per una valutazione</h5>
+      <p class="card-text small text-muted">Scopri i principali sintomi che richiedono una visita ortopedica e l’importanza di una diagnosi tempestiva.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloOrtopedia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- =====================------------------------------------------------------------------------------------- MODALE ORTOPEDIA ===================== -->
+<div class="modal fade" id="articoloOrtopedia" tabindex="-1" aria-labelledby="titoloOrtopedia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      
+      <!-- HEADER -->
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloOrtopedia">
+          Quando rivolgersi all’ortopedico: sintomi e diagnosi precoce
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body p-4">
+        <img src="/assets/img/medicoUomo.jpg" 
+             alt="Visita ortopedica per dolori articolari e diagnosi precoce dei problemi muscoloscheletrici" 
+             class="img-fluid rounded mb-4 shadow-sm">
+
+        <p>
+          L’ortopedia si occupa della prevenzione, diagnosi e cura delle patologie che colpiscono ossa, articolazioni, muscoli e tendini. 
+          Rivolgersi tempestivamente a uno specialista può evitare peggioramenti e ridurre i tempi di recupero.
+        </p>
+
+        <h6 class="fw-bold mt-4"> Quando è consigliata una visita ortopedica</h6>
+        <ul>
+          <li>Dolori articolari persistenti o rigidità nei movimenti.</li>
+          <li>Gonfiori o infiammazioni di articolazioni o muscoli.</li>
+          <li>Dolore che peggiora durante l’attività fisica o il riposo notturno.</li>
+          <li>Traumi, distorsioni o sospette fratture.</li>
+          <li>Difficoltà motorie o perdita di forza in mani e gambe.</li>
+        </ul>
+
+        <h6 class="fw-bold mt-4"> Diagnosi e trattamento</h6>
+        <p>
+          Dopo la visita clinica, il medico ortopedico può prescrivere esami come radiografie, risonanze magnetiche o ecografie muscolari.
+          Le terapie possono essere conservative (fisioterapia, esercizi, farmaci antinfiammatori) oppure chirurgiche in casi più complessi.
+        </p>
+
+        <h6 class="fw-bold mt-4">Prevenzione e salute articolare</h6>
+        <p>
+          Mantenere un peso equilibrato, praticare regolarmente attività fisica controllata e correggere posture scorrette sono azioni fondamentali
+          per preservare la salute articolare nel tempo.
+        </p>
+
+        <p class="mt-4 text-muted small">
+          <em>Articolo a cura del Dr. Marco Rossi – Specialista in Ortopedia e Traumatologia, Clinica Privata Torino.</em>
+        </p>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=ortopedia" class="btn btn-success">
+          Prenota una visita ortopedica
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =====================-------------------------------------------------------------------------------------fine MODALE ORTOPEDIA ===================== -->
+
+<!-- OTORINOLARINGOIATRIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Otorinolaringoiatria">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/otorinolaringoiatria.png" class="card-img-top" alt="Esame otorinolaringoiatrico per orecchie, naso e gola in clinica privata a Torino">
+    <div class="card-body">
+      <h5 class="card-title">Disturbi di orecchie, naso e gola: quando consultare l’otorino</h5>
+      <p class="card-text small text-muted">Riconoscere i segnali che richiedono un controllo specialistico e come prevenire infezioni ricorrenti.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloOtorino">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE OTORINOLARINGOIATRIA ===================== -->
+<div class="modal fade" id="articoloOtorino" tabindex="-1" aria-labelledby="titoloOtorino" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloOtorino">Disturbi di orecchie, naso e gola: quando consultare l’otorino</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/medicoUomo.jpg" alt="Visita otorinolaringoiatrica per orecchie, naso e gola" class="img-fluid rounded mb-4 shadow-sm">
+       
+<p> L’otorinolaringoiatria si occupa della diagnosi e del trattamento delle patologie che interessano orecchie, naso e gola, apparati strettamente collegati tra loro e fondamentali per respirare,
+     parlare e sentire correttamente. Disturbi frequenti come sinusiti, otiti, vertigini o apnee notturne possono compromettere la qualità della vita e richiedono una valutazione specialistica tempestiva. </p> 
+     <h6 class="fw-bold mt-4">🔹 Quando fissare una visita otorinolaringoiatrica</h6>
+      <ul> 
+        <li>Otiti, sinusiti o tonsilliti ricorrenti che non migliorano con le cure di base.</li>
+        <li>Ronzii, acufeni o riduzione dell’udito, anche improvvisa.</li>
+         <li>Russamento intenso, apnee notturne o difficoltà respiratorie durante il sonno.</li>
+          <li>Vertigini, capogiri o sensazione di instabilità.</li>
+         </ul>
+          <p> Un approccio multidisciplinare e l’uso di strumenti diagnostici moderni permettono di individuare rapidamente la causa dei disturbi e impostare terapie mirate, migliorando la respirazione,
+             la qualità del sonno e l’udito del paziente. </p> 
+             <p class="mt-4 text-muted small"><em>Articolo a cura del Dr. Mario Azzurro – Otorinolaringoiatria.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=otorinolaringoiatria" class="btn btn-success">Prenota una visita ORL</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== fine MODALE OTORINOLARINGOIATRIA ===================== -->
+
+<!-- NEUROLOGIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Neurologia">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/neurologia.png" class="card-img-top" alt="Medico neurologo analizza una risonanza cerebrale per disturbi neurologici">
+    <div class="card-body">
+      <h5 class="card-title">Mal di testa ricorrenti: quando serve una visita neurologica</h5>
+      <p class="card-text small text-muted">Scopri quando è necessario rivolgersi al neurologo per cefalee, emicranie o disturbi del sonno.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloNeurologia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE NEUROLOGIA ===================== -->
+<div class="modal fade" id="articoloNeurologia" tabindex="-1" aria-labelledby="titoloNeurologia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloNeurologia">Mal di testa ricorrenti: quando serve una visita neurologica</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/MedicoDonna.jpg" alt="Esame neurologico per cefalee e disturbi del sonno" class="img-fluid rounded mb-4 shadow-sm">
+        <p> La neurologia studia e tratta i disturbi del sistema nervoso centrale e periferico, responsabile di funzioni vitali come il movimento, la sensibilità,
+             la memoria e la coordinazione. Molti sintomi, spesso sottovalutati, come mal di testa ricorrenti, tremori o episodi di vertigine, possono essere segnali di alterazioni
+              neurologiche che meritano attenzione. Una valutazione precoce consente di identificare disturbi funzionali o degenerativi e di impostare un percorso terapeutico efficace. </p>
+               <h6 class="fw-bold mt-4">🔹 Quando è consigliata</h6> 
+               <ul>
+                 <li>Mal di testa frequenti, improvvisi o accompagnati da disturbi visivi o nausea.</li> 
+                 <li>Problemi di memoria, concentrazione o linguaggio, anche lievi ma persistenti.</li> 
+                 <li>Tremori, debolezza muscolare, disturbi del sonno o perdita di equilibrio.</li> 
+                </ul>
+                <p> Una visita neurologica approfondita aiuta a individuare precocemente patologie come epilessia, neuropatie, sclerosi multipla o Parkinson, permettendo di intervenire tempestivamente.
+                     La prevenzione, anche in ambito neurologico, è la chiave per preservare la salute cerebrale nel tempo. </p>
+                      <p class="mt-4 text-muted small"><em>Articolo a cura della Dott.ssa Laura Mori – Neurologia.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=neurologia" class="btn btn-success">Prenota una visita neurologica</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== fine MODALE NEUROLOGIA ===================== -->
+
+<!-- ONCOLOGIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Oncologia">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/oncologia.png" class="card-img-top" alt="Medico oncologo analizza campioni per prevenzione e diagnosi precoce dei tumori">
+    <div class="card-body">
+      <h5 class="card-title">Prevenzione oncologica: l’importanza dei controlli periodici</h5>
+      <p class="card-text small text-muted">Come la diagnosi precoce e gli screening regolari possono salvare vite e migliorare la prognosi.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloOncologia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE ONCOLOGIA ===================== -->
+<div class="modal fade" id="articoloOncologia" tabindex="-1" aria-labelledby="titoloOncologia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloOncologia">Prevenzione oncologica: controlli che salvano la vita</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/medicoUomo.jpg" alt="Visita oncologica e screening di prevenzione tumori" class="img-fluid rounded mb-4 shadow-sm">
+<p> La prevenzione oncologica rappresenta uno degli strumenti più efficaci per ridurre l’incidenza e la mortalità dei tumori. Attraverso controlli periodici,
+     esami mirati e uno stile di vita equilibrato, è possibile individuare precocemente alterazioni cellulari e intervenire tempestivamente. L’oncologia moderna non si limita più alla cura della malattia,
+      ma punta sempre di più sulla diagnosi precoce e sulla sensibilizzazione dei pazienti. </p> 
+      <ul> 
+        <li>Esecuzione di esami di screening regolari come mammografia, colonscopia e test HPV, in base all’età e al profilo di rischio.</li>
+         <li>Adozione di uno stile di vita sano: alimentazione equilibrata, attività fisica e abolizione del fumo.</li>
+          <li>Programmi di prevenzione personalizzati per chi presenta familiarità oncologica o fattori di rischio specifici.</li> 
+        </ul> 
+        <p> Investire nella prevenzione significa salvare vite e migliorare la prognosi di chi riceve una diagnosi oncologica. Un controllo regolare presso centri specializzati consente di affrontare
+             la salute in modo consapevole e proattivo. </p> 
+             <p class="mt-4 text-muted small"><em>Articolo a cura del Dr. Fabio Sampo – Oncologia.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=oncologia" class="btn btn-success">Prenota una visita oncologica</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== fine MODALE ONCOLOGIA ===================== -->
+
+<!-- CARDIOLOGIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Cardiologia">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/cardiologia.png" class="card-img-top" alt="Elettrocardiogramma e controllo cardiologico in clinica privata di Torino">
+    <div class="card-body">
+      <h5 class="card-title">Cuore e prevenzione: controlli fondamentali dopo i 40 anni</h5>
+      <p class="card-text small text-muted">Scopri gli esami cardiologici più utili per monitorare la salute del cuore e prevenire malattie cardiovascolari.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloCardiologia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE CARDIOLOGIA ===================== -->
+<div class="modal fade" id="articoloCardiologia" tabindex="-1" aria-labelledby="titoloCardiologia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloCardiologia">Cuore e prevenzione: controlli fondamentali dopo i 40 anni</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/medicoUomo.jpg" alt="Controllo cardiologico con elettrocardiogramma e visita specialistica" class="img-fluid rounded mb-4 shadow-sm">
+        <p> La salute del cuore è un aspetto fondamentale del benessere generale e richiede attenzione costante, soprattutto dopo i 40 anni. Molte patologie cardiovascolari,
+             come ipertensione, aritmie o coronaropatie, possono svilupparsi in modo silenzioso e manifestarsi solo in fase avanzata. Un controllo periodico consente di individuare precocemente eventuali anomalie,
+              riducendo il rischio di eventi acuti come infarto o ictus e migliorando la qualità della vita attraverso la prevenzione. </p>
+               <ul>
+                 <li>Monitoraggio della pressione arteriosa, del colesterolo e dei principali parametri ematici.</li> 
+                 <li>Esecuzione di elettrocardiogramma (ECG) ed ecocardiogramma per valutare ritmo, struttura e funzionalità del cuore.</li> 
+                 <li>Analisi personalizzata del rischio cardiovascolare e indicazioni sullo stile di vita più adatto.</li> 
+                </ul>
+                 <p> Un corretto stile di vita, abbinato a controlli regolari, rappresenta la miglior difesa contro le malattie cardiache. La prevenzione cardiologica, infatti,
+                     non si limita alla diagnosi ma aiuta a mantenere un cuore sano nel tempo. </p>
+                      <p class="mt-4 text-muted small"><em>Articolo a cura del Dr. Paolo Sampi – Cardiologia.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=cardiologia" class="btn btn-success">Prenota una visita cardiologica</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== fine MODALE CARDIOLOGIA ===================== -->
+
+<!-- PEDIATRIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Pediatria">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/pediatria.png" class="card-img-top" alt="Visita pediatrica di controllo per crescita e salute dei bambini">
+    <div class="card-body">
+      <h5 class="card-title">Controlli pediatrici: come accompagnare la crescita del bambino</h5>
+      <p class="card-text small text-muted">Le visite pediatriche più importanti durante l’infanzia e i segnali da non trascurare.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloPediatria">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE PEDIATRIA ===================== -->
+<div class="modal fade" id="articoloPediatria" tabindex="-1" aria-labelledby="titoloPediatria" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloPediatria">Controlli pediatrici: accompagnare la crescita del bambino</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/MedicoDonna.jpg" alt="Visita pediatrica di controllo crescita e sviluppo" class="img-fluid rounded mb-4 shadow-sm">
+        <p> La pediatria è la disciplina medica che si occupa della crescita, dello sviluppo e della salute globale del bambino, dalla nascita all’adolescenza. 
+            Il pediatra è una figura di riferimento non solo per la cura delle malattie, ma anche per la prevenzione e l’educazione sanitaria dell’intera famiglia.
+             Controlli regolari permettono di monitorare lo sviluppo psicofisico, individuando precocemente eventuali disturbi o carenze, e garantendo al bambino un percorso di crescita armonioso e sereno. </p>
+              <ul> 
+                <li>Visite periodiche per valutare crescita, peso, sviluppo motorio e cognitivo.</li>
+                 <li>Vaccinazioni e screening preventivi per la tutela della salute infantile.</li> 
+                 <li>Consulenze nutrizionali e comportamentali mirate a ogni fase dello sviluppo.</li>
+                 </ul> 
+                 <p> L’approccio pediatrico moderno pone al centro il benessere del bambino nella sua interezza, integrando aspetti fisici, emotivi e sociali, in collaborazione con genitori e specialisti. </p>
+                  <p class="mt-4 text-muted small"><em>Articolo a cura della Dott.ssa Fabia Veretti – Pediatria.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=pediatria" class="btn btn-success">Prenota una visita pediatrica</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =====================fine MODALE PEDIATRIA ===================== -->
+
+<!-- GINECOLOGIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Ginecologia">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/ginecologia.png" class="card-img-top" alt="Controllo ginecologico di prevenzione per la salute femminile">
+    <div class="card-body">
+      <h5 class="card-title">Prevenzione ginecologica: visite e screening fondamentali</h5>
+      <p class="card-text small text-muted">Pap test, ecografia e controlli ormonali: scopri come prenderti cura della salute femminile a ogni età.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloGinecologia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE GINECOLOGIA ===================== -->
+<div class="modal fade" id="articoloGinecologia" tabindex="-1" aria-labelledby="titoloGinecologia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloGinecologia">Prevenzione ginecologica: controlli e visite fondamentali</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/MedicoDonna.jpg" alt="Controllo ginecologico per salute femminile e prevenzione" class="img-fluid rounded mb-4 shadow-sm">
+        <p> La prevenzione ginecologica rappresenta un pilastro fondamentale per la salute di ogni donna. Controlli regolari e screening mirati consentono di individuare precocemente
+             alterazioni e patologie dell’apparato genitale femminile, permettendo interventi tempestivi e trattamenti meno invasivi. Una visita ginecologica annuale non serve solo a diagnosticare,
+              ma anche a prevenire disturbi e promuovere il benessere in tutte le fasi della vita, dalla pubertà alla menopausa. </p> 
+              <ul> 
+                <li>Pap test e HPV test per la prevenzione del tumore al collo dell’utero.</li>
+                 <li>Ecografia pelvica e transvaginale per monitorare ovaie, utero e endometrio.</li> 
+                 <li>Controlli ormonali e consulenze per la fertilità e la menopausa.</li> <li>Consulenze contraccettive e percorsi personalizzati per la salute riproduttiva.</li> 
+                </ul> 
+                <p> Oltre agli aspetti clinici, la ginecologia moderna pone grande attenzione anche al benessere emotivo e alla qualità della vita della donna. La possibilità di instaurare un rapporto
+                     di fiducia con il proprio specialista è fondamentale per affrontare con serenità ogni fase del percorso femminile. </p>
+                      <p class="mt-4 text-muted small"><em>Articolo a cura della Dott.ssa Sandra Sularo – Ginecologia.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=ginecologia" class="btn btn-success">Prenota una visita ginecologica</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== fine MODALE GINECOLOGIA ===================== -->
+
+<!-- CHIRURGIA PLASTICA -->
+<div class="col-md-6 col-lg-4" data-specialita="Chirurgia Plastica">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/chirurgiaPlastica.png" class="card-img-top" alt="Medico di chirurgia plastica esegue consulenza estetica per intervento ricostruttivo">
+    <div class="card-body">
+      <h5 class="card-title">Chirurgia plastica: differenza tra estetica e ricostruttiva</h5>
+      <p class="card-text small text-muted">Scopri come la chirurgia plastica può aiutare nel recupero funzionale ed estetico dopo traumi o interventi.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloChirurgia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE CHIRURGIA PLASTICA ===================== -->
+<div class="modal fade" id="articoloChirurgia" tabindex="-1" aria-labelledby="titoloChirurgia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloChirurgia">Chirurgia plastica: differenza tra estetica e ricostruttiva</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/medicoUomo.jpg" alt="Chirurgo plastico effettua consulenza estetica e ricostruttiva" class="img-fluid rounded mb-4 shadow-sm">
+        <p> La chirurgia plastica è una disciplina medica che unisce precisione tecnica e attenzione estetica, con l’obiettivo di migliorare la forma e la funzionalità del corpo. Non si limita ai soli interventi estetici,
+             ma comprende anche la chirurgia ricostruttiva, dedicata a riparare danni causati da traumi, ustioni o interventi oncologici.
+              Ogni procedura viene studiata su misura per il paziente, tenendo conto non solo del risultato estetico, ma anche del suo benessere psicologico e della qualità della vita. </p>
+               <ul> 
+                <li>Ricostruzioni post-traumatiche o dopo interventi chirurgici complessi.</li> 
+                <li>Interventi estetici personalizzati, come rinoplastica, blefaroplastica e liposuzione.</li>
+                 <li>Collaborazione multidisciplinare con dermatologi, fisiatri e oncologi per garantire risultati armoniosi e duraturi.</li> 
+                </ul> 
+                <p> La chirurgia plastica moderna privilegia tecniche mini-invasive e tempi di recupero rapidi, mirando a risultati naturali e proporzionati.
+                     Scegliere di affidarsi a un chirurgo qualificato significa investire nel proprio equilibrio fisico ed emotivo, recuperando fiducia in sé stessi e armonia con la propria immagine. </p>
+                      <p class="mt-4 text-muted small"><em>Articolo a cura del Dr. Corrado Bistefanis – Specialista in Chirurgia Plastica, Ricostruttiva ed Estetica.</em></p>
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=chirurgia-plastica" class="btn btn-success">Prenota una consulenza</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== fine MODALE CHIRURGIA PLASTICA ===================== -->
+
+<!-- DERMATOLOGIA -->
+<div class="col-md-6 col-lg-4" data-specialita="Dermatologia">
+  <div class="card shadow-sm h-100">
+    <img src="/assets/img/dermatologia.png" class="card-img-top" alt="Controllo dei nei e prevenzione dei tumori della pelle in ambulatorio dermatologico">
+    <div class="card-body">
+      <h5 class="card-title">Dermatologia e prevenzione: la pelle racconta la tua salute</h5>
+      <p class="card-text small text-muted">Dalla prevenzione del melanoma alla cura dell’acne: scopri i consigli dei nostri specialisti in dermatologia.</p>
+      <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#articoloDermatologia">Leggi l’articolo</button>
+    </div>
+  </div>
+</div>
+<!-- ===================== MODALE DERMATOLOGIA ===================== -->
+<div class="modal fade" id="articoloDermatologia" tabindex="-1" aria-labelledby="titoloDermatologia" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-lightblue border-0">
+        <h5 class="modal-title fw-bold" id="titoloDermatologia">Dermatologia e prevenzione: la pelle racconta la tua salute</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+      <div class="modal-body p-4">
+        <img src="/assets/img/MedicoDonna.jpg" alt="Controllo dermatologico e mappatura dei nei per prevenzione melanoma" class="img-fluid rounded mb-4 shadow-sm">
+        <p>
+La pelle è l’organo più esteso del corpo umano e rappresenta una vera e propria barriera di difesa contro agenti esterni, infezioni e traumi. 
+Osservarne i cambiamenti nel tempo è fondamentale, perché molte patologie dermatologiche possono manifestarsi con sintomi inizialmente lievi o poco evidenti. 
+Una visita dermatologica periodica permette di individuare precocemente alterazioni cutanee e intervenire con trattamenti mirati, migliorando la salute e l’aspetto della pelle.
+</p>
+
+<h6 class="fw-bold mt-4">🔹 Quando è consigliata una visita dermatologica</h6>
+<ul>
+  <li>Comparsa di nei nuovi o modificati per forma, colore o dimensione.</li>
+  <li>Presenza di arrossamenti, desquamazioni o pruriti persistenti.</li>
+  <li>Lesioni cutanee che non guariscono o cambiano aspetto nel tempo.</li>
+  <li>Caduta eccessiva dei capelli o alterazioni del cuoio capelluto.</li>
+</ul>
+
+<h6 class="fw-bold mt-4">🔹 Patologie più comuni trattate dal dermatologo</h6>
+<p>
+Tra le condizioni più frequentemente riscontrate durante una visita dermatologica troviamo acne, dermatite atopica, eczema, psoriasi e infezioni fungine. 
+Il dermatologo può inoltre eseguire trattamenti estetici e medicali come peeling chimici, rimozione laser di lesioni benigne, terapie per l’iperpigmentazione o per l’invecchiamento cutaneo.
+</p>
+
+<h6 class="fw-bold mt-4">🔹 Prevenzione e cura</h6>
+<p>
+La prevenzione resta l’arma più efficace: sottoporsi a una mappatura dei nei ogni 12-18 mesi consente di individuare eventuali melanomi in fase iniziale, con elevate possibilità di guarigione. 
+Anche la protezione solare quotidiana, un’alimentazione equilibrata e l’idratazione della pelle sono abitudini indispensabili per mantenere la cute sana nel tempo.
+</p>
+
+<p class="mt-4 text-muted small">
+  <em>Articolo a cura della Dott.ssa Giulia Boccovani – Specialista in Dermatologia e Venereologia, Clinica Privata Torino.</em>
+</p>
+
+      </div>
+      <div class="modal-footer border-0 bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <a href="/html/prenota.html?specialita=dermatologia" class="btn btn-success">Prenota una visita dermatologica</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =====================fine MODALE DERMATOLOGIA ===================== -->
+  </div>
+</section>
+
+
+<!------------------------------------------------------------------------ form invio mail di richiesta, visibile in fondo alla home fisso oppure premendo "info prenotazioni" nella navbar/footer -->
+  <section id="form-prenotazioni" class="container py-5">
+    <h2 class="text-center mb-4 mappa">Richiedi informazioni</h2>
+    <div class="row">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <form action="https://formspree.io/f/xpwylono" method="POST" target="_blank">
+
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="Nome" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="Email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="messaggio" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="messaggio" name="Messaggio" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Invia richiesta</button>
+        </form>
+
+        <!-- Messaggio di conferma opzionale -->
+        <p id="form-status" class="text-center mt-3 fw-semibold text-success d-none">
+          ✅ Messaggio inviato correttamente!
+        </p>
+      </div>
+    </div>
+  </section>
+  <!----------------------------------------------------------------------- fine form invio mail di richiesta, visibile in fondo alla home fisso oppure premendo "info prenotazioni" nella navbar -->
+
+  <!----------------------------------------------------------------------- footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <footer class=" text-dark pt-4 ">
+    <div class="container-xl bg-lightblue border-top px-4">
+      <div class="row gy-4 text-center text-md-start">
+
+        <!-- COL 1: SOCIAL -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">SOCIAL</h6>
+          <a href="https://facebook.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-facebook-f me-2"></i> Facebook
+          </a>
+          <a href="https://instagram.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-instagram me-2"></i> Instagram
+          </a>
+          <a href="https://linkedin.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-linkedin me-2"></i> LinkedIn
+          </a>
+          <!-- pulsante condividi-->
+<button id="shareBtn" class="btn btn-outline-primary">
+  <i class="fas fa-share-alt me-2"></i>Condividi
+</button>
+        </div>
+
+        <!-- COL 2: CONTATTI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">CONTATTI</h6>
+          <p class="mb-1">
+            <i class="fas fa-phone-alt text-success me-2"></i>
+            <a href="tel:+390123456789" class="text-muted text-decoration-none footer-link">3923688757</a>
+          </p>
+          <p class="mb-1">
+            <i class="fas fa-envelope text-success me-2"></i>
+            <a href="#form-prenotazioni" class="text-muted text-decoration-none footer-link">Richiedi informazioni</a>
+          </p>
+        </div>
+
+        <!-- COL 3: LEGALI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">INFORMA<wbr>ZIONI</h6>
+          <p class="mb-1">P.IVA 12345678901</p>
+          <a href="html/noteLegalii.html" class="text-muted text-decoration-none d-block footer-link"
+            target="_blank">Note legali</a>
+          <a href="/html/privacyEcookies.html" class="text-muted text-decoration-none d-block footer-link"
+            target="_blank">Privacy & Cookie</a>
+             <p class="text-center text-muted small mt-4">
+            ⚠️ Questo sito è una demo realizzata a scopo didattico.
+            I contenuti, nomi e indirizzi sono puramente fittizi.
+          </p>
+        </div>
+
+        <!-- COL 4: LOGO & COPYRIGHT -->
+        <div class="col-12 col-md-3 text-md-end text-center">
+          <a class="navbar-brand sfondo d-inline-block mb-2" href="/assets/img/clinica.png" target="_blank">
+            <img src="/assets/img/logoClinica.png" alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online"
+ width="100">
+          </a>
+          <p class="small text-muted">© 2025 Clinica Privata. Tutti i diritti riservati.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!----------------------------------------------------------------------- fine footer--------------------------------------------------------------------------------------------------------------------------- -->
+  
+  
+  <!----------------------------------------------------------------------- script selezione categoria articoli cercati--------------------------------------------------------------------------------------------------------------------------- -->
+<script>
+  function slugify(s) {
+    return (s || "")
+      .toString()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // rimuove accenti
+      .trim().toLowerCase().replace(/\s+/g, "-");       // spazi -> trattini
+  }
+
+  document.getElementById("filtroSpecialita").addEventListener("change", function () {
+    const filtro = slugify(this.value);
+    const cards = document.querySelectorAll("[data-specialita]");
+
+    cards.forEach(card => {
+      const spec = slugify(card.dataset.specialita);
+      const show = (filtro === "tutte" || filtro === spec);
+      card.classList.toggle("d-none", !show);
+    });
+  });
+</script>
+  <!-----------------------------------------------------------------------finnt script selezione categoria articoli cercati--------------------------------------------------------------------------------------------------------------------------- -->
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script JS personalizzato -->
+  <script src="/js/index.js"></script>
+</body>
+
+</html>

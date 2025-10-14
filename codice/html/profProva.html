@@ -1,0 +1,1336 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il nostro Team</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Avesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- File CSS personalizzato -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+  <!-- ✅ Navbar full-width, elegante e responsive -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light pt-0">
+    <div class="container-xl bg-lightblue shadow-sm px-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand sfondo" href="/assets/img/clinica.png" target="_blank">
+        <img src="/assets/img/logoClinica.png" alt="Logo" width="100" class="d-inline-block">
+      </a>
+
+      <!-- Bottone hamburger per mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Link della navbar -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav">
+
+          <!-- Chiamata rapida -->
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+390123456789">
+              <i class="fas fa-phone-alt text-success me-1"></i> 0123 456789
+            </a>
+          </li>
+
+          <!-- Info mail -->
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#form-prenotazioni">
+              <i class="fas fa-envelope text-success me-1"></i> Richiedi informazioni
+            </a>
+          </li>
+
+          <!-- Altri link -->
+          <li class="nav-item">
+            <a class="nav-link " href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="servizi.html">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="professionisti.html">Professionisti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="prenota.html">Prenota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contatti.html">Contatti</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+
+<!-- HERO INTRODUZIONE SPECIALISTI -->
+<section class="py-5 bg-lightblue text-center">
+  <div class="container">
+
+
+    <div class="container mb-4">
+  <label for="filtro-discipline" class="form-label fw-semibold">Seleziona la specialità richiesta:</label>
+  <select id="filtro-discipline" class="form-select">
+    <option value="tutte">Tutte le specialità</option>
+    <option value="ortopedia">Ortopedia</option>
+    <option value="otorinolaringoiatria">Otorinolaringoiatria</option>
+    <option value="neurologia">Neurologia</option>
+    <option value="oncologia">Oncologia</option>
+    <option value="cardiologia">Cardiologia</option>
+    <option value="pediatria">Pediatria</option>
+    <option value="ginecologia">Ginecologia</option>
+    <option value="chirurgia-plastica">Chirurgia Plastica</option>
+    <option value="dermatologia">Dermatologia</option>
+  </select>
+</div>
+
+
+    <!-- Carosello immagini specialisti -->
+    <!-- HERO + SLIDER SPECIALISTI -->
+<section class="py-5 bg-lightblue text-center">
+  <div class="container">
+
+    <!-- Titolo + frase -->
+    <h1 class="fw-bold mb-3">Il nostro Team di Specialisti</h1>
+    <p class="lead text-muted">Professionalità, ascolto e cura. Sempre al tuo fianco.</p>
+
+    <!-- SLIDER -->
+    <div id="carouselSpecialisti" class="carousel slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- PRIMA COPPIA -->
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center gap-4">
+            <img src="/assets/img/medicoUomo.jpg" class="slider-img" alt="Specialista 1">
+            <img src="/assets/img/MedicoDonna.jpg" class="slider-img" alt="Specialista 2">
+          </div>
+        </div>
+
+        <!-- SECONDA COPPIA -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center gap-4">
+            <img src="/assets/img/medicoUomo.jpg" class="slider-img" alt="Specialista 3">
+            <img src="/assets/img/MedicoDonna.jpg" class="slider-img" alt="Specialista 4">
+          </div>
+        </div>
+
+        <!-- TERZA COPPIA -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center gap-4">
+            <img src="/assets/img/medicoUomo.jpg" class="slider-img" alt="Specialista 5">
+            <img src="/assets/img/MedicoDonna.jpg" class="slider-img" alt="Specialista 6">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+
+  <section class="container py-5">
+
+    <!------------------------------------------------------------------------ Blocco testo dinamico della specialità -->
+    <div id="blocco-specialita" class="mb-5">
+      <h2 id="titolo-disciplina" class="text-center mb-3 fw-bold"></h2>
+      <p id="testo-disciplina" class="lead text-center text-muted"></p>
+
+      <!-- PULSANTE per mostrare tutti -->
+      <div class="text-center mt-4">
+        <button id="mostraTuttiBtn" class="btn btn-secondary">Mostra tutti i professionisti</button>
+      </div>
+    </div>
+
+    <!------------------------------------------------------------------------ FINE Blocco testo dinamico della specialità -->
+
+
+
+    <!-- ORTOPEDIA -->
+    <div class="blocco-disciplina" data-disciplina="ortopedia">
+      <h3 class="mb-3 mappa sinistra">ORTOPEDIA</h3>
+      <div class="row g-4 mb-5">
+
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Marco Rossi</h5>
+              <p class="card-text">Specialista in Ortopedia e Traumatologia.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalRossi">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- MODALE: Dr. Marco Rossi -->
+        <div class="modal fade" id="modalRossi" tabindex="-1" aria-labelledby="modalRossiLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalRossiLabel">Dr. Marco Rossi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in Ortopedia e Traumatologia, il Dr. Rossi si occupa di interventi su anca, ginocchio e
+                colonna vertebrale, con approccio mininvasivo e personalizzato.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- FINE Dr. Marco Rossi -->
+
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Laura Bianchi</h5>
+              <p class="card-text">Esperta in chirurgia ortopedica mininvasiva.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalBianchi">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- MODALE:Dr.ssa Laura Bianchi -->
+        <div class="modal fade" id="modalBianchi" tabindex="-1" aria-labelledby="modalBianchiLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBianchiLabel">Dr.ssa Laura Bianchi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in chirurgia ortopedica mininvasiva. Coniuga precisione e recupero rapido per interventi a
+                ginocchio, spalla e anca.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- FINE Dr.ssa Laura Bianchi -->
+
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Luca Verdi</h5>
+              <p class="card-text">Riabilitazione ortopedica e medicina dello sport.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalVerdi">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- MODALE:Dr Luca Verdi -->
+        <div class="modal fade" id="modalVerdi" tabindex="-1" aria-labelledby="modalVerdiLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalVerdiLabel">Dr. Luca Verdi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specializzato in riabilitazione ortopedica e medicina dello sport. Aiuta pazienti e atleti a recuperare
+                funzionalità e prevenire recidive. </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- FINE Dr.ssa Laura Bianchi -->
+      </div>
+    </div>
+    <!-- OTORINOLARINGOIATRIA -->
+    <div class="blocco-disciplina" data-disciplina="otorinolaringoiatria">
+      <h3 class="mb-3 mappa sinistra">OTORINO<wbr>LARINGO<wbr>IATRIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card 1  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Mario Azzurro</h5>
+              <p class="card-text">Specialista in Disturbi dell’equilibrio e vertigini.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalAzzurro">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale Dr. Mario Azzurro -->
+        <div class="modal fade" id="modalAzzurro" tabindex="-1" aria-labelledby="modalAzzurroLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalAzzurroLabel">Dr. Mario Azzurro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+              <div class="modal-body">
+                Specialista in disturbi dell’equilibrio e vertigini. Diagnosi mirate e terapie innovative per problemi
+                vestibolari.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FINE modale Dr. Mario Azzurro -->
+
+        <!--card 2  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Lara Mazza</h5>
+              <p class="card-text">Esperta in Apnee notturne e russamento.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalMazza">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale Dr.ssa Lara Mazza -->
+        <div class="modal fade" id="modalMazza" tabindex="-1" aria-labelledby="modalMazzaLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalMazzaLabel">Dr.ssa Lara Mazza</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+              <div class="modal-body">
+                Esperta in apnee notturne e russamento. Offre percorsi diagnostici e terapeutici personalizzati per
+                disturbi del sonno.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--fine modale Dr.ssa Lara Mazza -->
+
+        <!--card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Bruno Anselmi</h5>
+              <p class="card-text">Patologie del naso e dei seni paranasali.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalAnselmi">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- modale Dr. Bruno Anselmi -->
+        <div class="modal fade" id="modalAnselmi" tabindex="-1" aria-labelledby="modalAnselmiLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalAnselmiLabel">Dr. Bruno Anselmi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+              <div class="modal-body">
+                Patologie del naso e dei seni paranasali. Si occupa di sinusiti croniche, polipi e problemi respiratori
+                nasali.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fienm modale Dr. Bruno Anselmi -->
+      </div>
+    </div>
+
+
+    <!-- NEUROLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="neurologia">
+      <h3 class="mb-3 mappa sinistra">NEUROLOGIA</h3>
+      <div class="row g-4 mb-5">
+        <!--card1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Mario Azzurri</h5>
+              <p class="card-text">Specialista in Epilessia e disturbi convulsivi.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalAzzurri">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale azzurir-->
+        <div class="modal fade" id="modalAzzurri" tabindex="-1" aria-labelledby="modalAzzurriLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalAzzurriLabel">Dr. Mario Azzurri</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in epilessia e disturbi convulsivi. Si occupa di diagnosi complesse e terapie avanzate per
+                migliorare la qualità della vita dei pazienti.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--fine modale azzurri-->
+
+        <!--card2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Laura Mori</h5>
+              <p class="card-text">Esperta in Malattie neurodegenerative.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalMori">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale mori-->
+        <div class="modal fade" id="modalMori" tabindex="-1" aria-labelledby="modalMoriLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalMoriLabel">Dr.ssa Laura Mori</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in malattie neurodegenerative come Parkinson e Alzheimer. Offre supporto clinico e gestionale a
+                lungo termine con approccio empatico.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--fine modale mori-->
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Aldo Bruna</h5>
+              <p class="card-text">Cefalee e emicranie croniche.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBruna">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale dr bruna-->
+        <div class="modal fade" id="modalBruna" tabindex="-1" aria-labelledby="modalBrunaLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBrunaLabel">Dr. Aldo Bruna</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in cefalee ed emicranie croniche. Offre diagnosi precise e piani terapeutici su misura per
+                migliorare la qualità della vita.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--fine modale dr bruna-->
+      </div>
+    </div>
+
+
+    <!-- ONCOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="oncologia">
+      <h3 class="mb-3 mappa sinistra">ONCOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Fabio Sampo</h5>
+              <p class="card-text">Specialista in Tumori del seno.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalSampo">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale dr sampo-->
+        <div class="modal fade" id="modalSampo" tabindex="-1" aria-labelledby="modalSampoLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSampoLabel">Dr. Fabio Sampo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+              <div class="modal-body">
+                Specialista in tumori del seno, offre diagnosi precoce, consulenza terapeutica e supporto personalizzato
+                durante tutto il percorso oncologico.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--fine modale dr sampo-->
+        <!--card 2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Maura Luona</h5>
+              <p class="card-text">Esperta in Tumori gastrointestinali.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalLuona">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale dr luona-->
+        <div class="modal fade" id="modalLuona" tabindex="-1" aria-labelledby="modalLuonaLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLuonaLabel">Dr.ssa Maura Luona</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in tumori gastrointestinali, segue pazienti con patologie oncologiche di stomaco, colon e
+                pancreas, con approccio multidisciplinare.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--fine modale dr luona-->
+
+        <!--card 3-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Bruno Cucci</h5>
+              <p class="card-text">Oncologia polmonare.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCucci">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale dr cucci-->
+        <div class="modal fade" id="modalCucci" tabindex="-1" aria-labelledby="modalCucciLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCucciLabel">Dr. Bruno Cucci</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specializzato in oncologia polmonare. Offre diagnosi accurate, terapie innovative e assistenza
+                continuativa per pazienti con neoplasie respiratorie.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--fine modale dr cucci-->
+      </div>
+    </div>
+    <!-- CARDIOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="cardiologia">
+      <h3 class="mb-3 mappa sinistra">CARDIOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Paolo Sampi</h5>
+              <p class="card-text">Specialista in Ipertensione arteriosa.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalSampi">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale sampi -->
+        <div class="modal fade" id="modalSampi" tabindex="-1" aria-labelledby="modalSampiLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSampiLabel">Dr. Paolo Sampi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in ipertensione arteriosa. Si occupa della prevenzione e del trattamento delle patologie
+                legate alla pressione alta, con percorsi personalizzati.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--fine modale sampi -->
+
+        <!--card2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Sandra Messina</h5>
+              <p class="card-text">Esperta in Scompenso cardiaco.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalMessina">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- modale  messina-->
+        <div class="modal fade" id="modalMessina" tabindex="-1" aria-labelledby="modalMessinaLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalMessinaLabel">Dr.ssa Sandra Messina</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in scompenso cardiaco. Offre diagnosi avanzate e terapie mirate per migliorare la funzionalità
+                cardiaca e la qualità di vita dei pazienti.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--fine modale messina -->
+
+        <!--card 3  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Lillo Bodelli</h5>
+              <p class="card-text">Prevenzione cardiovascolare.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalBodelli">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--modale bodelli -->
+        <div class="modal fade" id="modalBodelli" tabindex="-1" aria-labelledby="modalBodelliLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBodelliLabel">Dr. Lillo Bodelli</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specializzato in prevenzione cardiovascolare. Sviluppa programmi su misura per ridurre il rischio di
+                infarto e ictus attraverso controlli mirati e stili di vita sani.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--fine modale  bodell-->
+
+
+      </div>
+    </div>
+    <!-- PEDIATRIA -->
+    <div class="blocco-disciplina" data-disciplina="pediatria">
+      <h3 class="mb-3 mappa sinistra">PEDIATRIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card 1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Fabia Veretti</h5>
+              <p class="card-text">Specialista in Controlli di crescita e sviluppo.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalVeretti">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- modale  veretti-->
+        <div class="modal fade" id="modalVeretti" tabindex="-1" aria-labelledby="modalVerettiLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalVerettiLabel">Dr. Fabia Veretti</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in controlli di crescita e sviluppo. Segue con attenzione le tappe evolutive del bambino,
+                garantendo un supporto costante alle famiglie.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--fine modale  veretti-->
+
+        <!--card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Monica Cotta</h5>
+              <p class="card-text">Esperta in Vaccinazioni e prevenzione.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCotta">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- modale cotta -->
+        <div class="modal fade" id="modalCotta" tabindex="-1" aria-labelledby="modalCottaLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCottaLabel">Dr.ssa Monica Cotta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in vaccinazioni e prevenzione. Propone calendari vaccinali personalizzati e promuove la
+                protezione della salute dei più piccoli.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--fine modale  cotta-->
+
+        <!--card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Claudio Sulano</h5>
+              <p class="card-text">Malattie respiratorie pediatriche.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalSulano">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- modale  sulano-->
+        <div class="modal fade" id="modalSulano" tabindex="-1" aria-labelledby="modalSulanoLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSulanoLabel">Dr. Claudio Sulano</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in malattie respiratorie pediatriche. Tratta asma, bronchiti e altri disturbi respiratori
+                nei bambini con un approccio delicato e competente.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--fine modale  sulamno-->
+
+
+      </div>
+    </div>
+    <!-- GINECOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="ginecologia">
+      <h3 class="mb-3 mappa sinistra">GINECOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!-- card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Federico Callo</h5>
+              <p class="card-text">Specialista in Fertilità e PMA (Procreazione Medicalmente Assistita).</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCallo">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- modale callo -->
+        <div class="modal fade" id="modalCallo" tabindex="-1" aria-labelledby="modalCalloLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCalloLabel">Dr. Federico Callo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in fertilità e PMA. Accompagna le coppie nel percorso di procreazione medicalmente assistita
+                con professionalità e umanità.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale callo -->
+
+        <!--card 2  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Sandra Sularo</h5>
+              <p class="card-text">Esperta in Menopausa e disturbi ormonali.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalSularo">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale sularo -->
+        <div class="modal fade" id="modalSularo" tabindex="-1" aria-labelledby="modalSularoLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSularoLabel">Dr.ssa Sandra Sularo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in menopausa e disturbi ormonali. Offre soluzioni personalizzate per migliorare il benessere
+                femminile in ogni fase della vita.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale sularo -->
+
+        <!-- card 3  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Massimo Lallo</h5>
+              <p class="card-text">Pap test e prevenzione tumore al collo dell’utero.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalLallo">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  lallo-->
+        <div class="modal fade" id="modalLallo" tabindex="-1" aria-labelledby="modalLalloLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLalloLabel">Dr. Massimo Lallo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Si occupa di prevenzione oncologica femminile con particolare attenzione al Pap test e alla diagnosi
+                precoce del tumore al collo dell’utero.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  lallo-->
+
+
+      </div>
+    </div>
+    <!-- CHIURURGIA PLASTICA -->
+    <div class="blocco-disciplina" data-disciplina="chirurgia-plastica">
+      <h3 class="mb-3 mappa sinistra">CHIURURGIA PLASTICA</h3>
+      <div class="row g-4 mb-5">
+
+        <!-- card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Corrado Bistefanis</h5>
+              <p class="card-text">Specialista in Ricostruzione post-trauma o post-tumore.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalBistefanis">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  Bistefanis-->
+        <div class="modal fade" id="modalBistefanis" tabindex="-1" aria-labelledby="modalBistefanisLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBistefanisLabel">Dr. Corrado Bistefanis</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in ricostruzione post-trauma o post-tumore. Aiuta i pazienti a ritrovare armonia e
+                funzionalità dopo eventi chirurgici complessi.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  Bistefanis-->
+
+        <!-- card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Sara Varetto</h5>
+              <p class="card-text">Esperta in Chirurgia estetica del volto.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalVaretto">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  Varetto-->
+        <div class="modal fade" id="modalVaretto" tabindex="-1" aria-labelledby="modalVarettoLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalVarettoLabel">Dr.ssa Sara Varetto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in chirurgia estetica del volto. Realizza interventi di rinoplastica, blefaroplastica e lifting,
+                con attenzione alla naturalezza dei risultati.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  Varetto-->
+
+        <!-- card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Maria Milo</h5>
+              <p class="card-text">Liposuzione e rimodellamento corporeo.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalMilo">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  Milo-->
+        <div class="modal fade" id="modalMilo" tabindex="-1" aria-labelledby="modalMiloLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalMiloLabel">Dr. Maria Milo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specializzata in liposuzione e rimodellamento corporeo. Accompagna i pazienti nel percorso di
+                trasformazione fisica in sicurezza.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  Milo-->
+      </div>
+    </div>
+    <!-- DERMATOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="dermatologia">
+      <h3 class="mb-3 mappa sinistra">DERMATOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!-- card1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Gian Paolo Ville</h5>
+              <p class="card-text">Specialista in Acne e dermatite seborroica.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalVille">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  Ville-->
+        <div class="modal fade" id="modalVille" tabindex="-1" aria-labelledby="modalVilleLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalVilleLabel">Dr. Gian Paolo Ville</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Specialista in acne e dermatite seborroica. Offre percorsi terapeutici personalizzati per il trattamento
+                efficace e duraturo di queste patologie cutanee.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  Ville-->
+
+        <!-- card2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Giulia Boccovani</h5>
+              <p class="card-text">Esperta in Controllo dei nei e prevenzione melanoma.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalBoccovani">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  Boccovani-->
+        <div class="modal fade" id="modalBoccovani" tabindex="-1" aria-labelledby="modalBoccovaniLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalBoccovaniLabel">Dr.ssa Giulia Boccovani</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Esperta in controllo dei nei e prevenzione del melanoma. Utilizza dermatoscopia avanzata per diagnosi
+                precoci e monitoraggi sicuri.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  Boccovani-->
+
+        <!-- card 3-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Roberto Ghigliola</h5>
+              <p class="card-text">Psoriasi ed eczema.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#modalGhigliola">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--  modale  Ghigliola-->
+        <div class="modal fade" id="modalGhigliola" tabindex="-1" aria-labelledby="modalGhigliolaLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalGhigliolaLabel">Dr. Roberto Ghigliola</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+              </div>
+
+              <div class="modal-body">
+                Dermatologo specializzato in psoriasi ed eczema. Offre trattamenti innovativi per migliorare la qualità
+                della pelle e la vita quotidiana dei pazienti.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <a href="prenota.html" class="btn btn-success">Prenota una visita</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- fine modale  Ghigliola-->
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!----------------------------------------------------------------------- footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <footer class=" text-dark pt-4 ">
+    <div class="container-xl bg-lightblue border-top px-4">
+      <div class="row gy-4 text-center text-md-start">
+
+        <!-- COL 1: SOCIAL -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">SOCIAL</h6>
+          <a href="https:facebook.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-facebook-f me-2"></i> Facebook
+          </a>
+          <a href="https:instagram.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-instagram me-2"></i> Instagram
+          </a>
+          <a href="https:linkedin.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-linkedin me-2"></i> LinkedIn
+          </a>
+        </div>
+
+        <!-- COL 2: CONTATTI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">CONTATTI</h6>
+          <p class="mb-1">
+            <i class="fas fa-phone-alt text-success me-2"></i>
+            <a href="tel:+390123456789" class="text-muted text-decoration-none footer-link">0123 456789</a>
+          </p>
+          <p class="mb-1">
+            <i class="fas fa-envelope text-success me-2"></i>
+            <a href="../index.html#form-prenotazioni" class="text-muted text-decoration-none footer-link">Richiedi
+              informazioni</a>
+          </p>
+        </div>
+
+        <!-- COL 3: LEGALI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">INFORMAZIONI</h6>
+          <p class="mb-1">P.IVA 12345678901</p>
+          <a href="noteLegalii.html" class="text-muted text-decoration-none d-block footer-link" target="_blank">Note
+            legali</a>
+          <a href="#" class="text-muted text-decoration-none d-block footer-link">Privacy & Cookie</a>
+        </div>
+
+        <!-- COL 4: LOGO & COPYRIGHT -->
+        <div class="col-12 col-md-3 text-md-end text-center">
+          <a class="navbar-brand sfondo d-inline-block mb-2" href="/assets/img/clinica.png" target="_blank">
+            <img src="/assets/img/logoClinica.png" alt="Logo" width="100">
+          </a>
+          <p class="small text-muted">© 2025 Clinica Privata. Tutti i diritti riservati.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!----------------------------------------------------------------------- fine footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script JS personalizzato -->
+  <script src="/js/index.js"></script>
+</body>
+
+</html>

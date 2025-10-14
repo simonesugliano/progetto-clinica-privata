@@ -1,0 +1,902 @@
+<!-- 
+  Progetto: Clinica Privata Torino
+  Autore: Simone Sugliano
+  Descrizione: Sito dimostrativo full responsive con gestione prenotazioni, database e ottimizzazione SEO.
+  Tecnologie: HTML5, CSS3, JavaScript, Bootstrap, Firebase
+  Data: Ottobre 2025
+-->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <!-- META BASE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medici e Specialisti - Clinica Privata Torino</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Conosci i nostri medici e specialisti: un team selezionato di professionisti con esperienza, competenza e attenzione al paziente.">
+  <meta name="keywords"
+    content="medici Torino, specialisti clinica privata, dottori Torino, personale medico, salute, sanità privata, ambulatorio">
+  <meta name="author" content="Clinica Privata S.r.l.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Medici e Specialisti - Clinica Privata Torino">
+  <meta property="og:description"
+    content="Scopri i professionisti della Clinica Privata di Torino: esperienza, attenzione e umanità al servizio del paziente.">
+  <meta property="og:image" content="https://democlinicaprivata.altervista.org/assets/img/clinica.png">
+  <meta property="og:url" content="https://democlinicaprivata.altervista.org/html/professionisti.html">
+  <meta property="og:type" content="website">
+
+  <!-- CANONICAL + FAVICON -->
+  <link rel="canonical" href="https://democlinicaprivata.altervista.org/html/professionisti.html">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="it">
+
+
+  <!----------------------------------------------------------------------------------------------------------link-->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Avesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- File CSS personalizzato -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <!----------------------------------------------------------------------------------------------navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+  <!--Navbar full-width, elegante e responsive -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light pt-0">
+    <div class="container-xl bg-lightblue shadow-sm px-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand sfondo" href="/assets/img/clinica.png" target="_blank">
+        <img src="/assets/img/logoClinica.png"
+          alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online"
+          width="100" class="d-inline-block">
+      </a>
+
+      <!-- Bottone hamburger per mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Link della navbar -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav">
+          <!-- toggle tema scuro/chiar-->
+          <li class="nav-item d-flex align-items-center me-3">
+            <button id="theme-toggle" class="btn btn-outline-secondary rounded-circle p-2" title="Cambia tema">
+              <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+          </li>
+          <!-- Chiamata rapida -->
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+390123456789" aria-label="Chiama la clinica">
+              <i class="fas fa-phone-alt text-success me-1"></i>3923688757
+            </a>
+          </li>
+
+          <!-- Info mail -->
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#form-prenotazioni">
+              <i class="fas fa-envelope text-success me-1"></i> Richiedi informazioni
+            </a>
+          </li>
+
+          <!-- paginne-->
+          <li class="nav-item">
+            <a class="nav-link " href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="servizi.html">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="professionisti.html">Professionisti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="prenota.html">Prenota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contatti.html">Contatti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/areaPersonale.html">Area Personale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/blog.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------------------------------------------------fine navbar bootstrap modificata---------------------------------------------------------------------------------------------------------->
+
+  <section class="py-5 bg-lightblue text-center">
+    <div class="container">
+
+      <!----------------------------------------------------------------------------------------------------- selezione specialita -->
+
+      <div class="container mb-4">
+        <label for="filtro-discipline" class="form-label fw-semibold">Seleziona la specialità richiesta:</label>
+        <select id="filtro-discipline" class="form-select">
+          <option value="tutte">Tutte le specialità</option>
+          <option value="ortopedia">Ortopedia</option>
+          <option value="otorinolaringoiatria">Otorinolaringoiatria</option>
+          <option value="neurologia">Neurologia</option>
+          <option value="oncologia">Oncologia</option>
+          <option value="cardiologia">Cardiologia</option>
+          <option value="pediatria">Pediatria</option>
+          <option value="ginecologia">Ginecologia</option>
+          <option value="chirurgia-plastica">Chirurgia Plastica</option>
+          <option value="dermatologia">Dermatologia</option>
+        </select>
+      </div>
+      <!----------------------------------------------------------------------------------------------------- fine selezione specialita -->
+
+
+      <!--------------------------------------------------------------------------------------------- Carosello dopio immagini specialisti -->
+      <section class="py-5 bg-lightblue text-center">
+        <div class="container">
+
+          <!-- Titolo + frase -->
+          <h1 class="fw-bold mb-3 mappa">Il nostro Team di Specialisti</h1>
+          <p class="lead text-muted">Professionalità, ascolto e cura. Sempre al tuo fianco.</p>
+
+          <!-- SLIDER -->
+          <div id="carouselSpecialisti" class="carousel slide mt-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <!-- PRIMA COPPIA -->
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center gap-4">
+                  <img src="/assets/img/medicoUomo.jpg" class="slider-img"
+                    alt="Medici specialisti della Clinica Privata di Torino che collaborano in team multidisciplinare per offrire visite e diagnosi personalizzate">
+                  <img src="/assets/img/MedicoDonna.jpg" class="slider-img"
+                    alt="Professionisti sanitari della Clinica Privata di Torino impegnati in una consulenza medica con attenzione e competenza">
+                </div>
+              </div>
+
+              <!-- SECONDA COPPIA -->
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center gap-4">
+                  <img src="/assets/img/medicoUomo.jpg" class="slider-img"
+                    alt="Medico specialista della Clinica Privata di Torino durante una visita di controllo con il paziente">
+                  <img src="/assets/img/MedicoDonna.jpg" class="slider-img"
+                    alt="Equipe medica della Clinica Privata di Torino che lavora in sinergia per la salute dei pazienti">
+                </div>
+              </div>
+
+              <!-- TERZA COPPIA -->
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center gap-4">
+                  <img src="/assets/img/medicoUomo.jpg" class="slider-img"
+                    alt="Ritratto di uno specialista della Clinica Privata di Torino pronto ad accogliere i pazienti con professionalità">
+                  <img src="/assets/img/MedicoDonna.jpg" class="slider-img"
+                    alt="Personale sanitario della Clinica Privata di Torino in ambiente moderno e accogliente">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Controlli -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselSpecialisti"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselSpecialisti"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </section>
+      <!---------------------------------------------------------------------------------------------finr Carosello doppio immagini specialisti -->
+
+  </section>
+
+
+  <section class="container py-5">
+
+    <!------------------------------------------------------------------------ Blocco testo dinamico della specialità -->
+    <div id="blocco-specialita" class="mb-5">
+      <h2 id="titolo-disciplina" class="text-center mb-3 fw-bold"></h2>
+      <p id="testo-disciplina" class="lead text-center text-muted"></p>
+
+      <!-- PULSANTE per mostrare tutti -->
+      <div class="text-center mt-4">
+        <button id="mostraTuttiBtn" class="btn btn-secondary">Mostra tutti i professionisti</button>
+      </div>
+    </div>
+
+    <!------------------------------------------------------------------------ FINE Blocco testo dinamico della specialità -->
+
+
+
+    <!-- ORTOPEDIA -->
+    <div class="blocco-disciplina" data-disciplina="ortopedia">
+      <h3 class="mb-3 mappa sinistra">ORTOPEDIA</h3>
+      <div class="row g-4 mb-5">
+
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Medico ortopedico della Clinica Privata di Torino specializzato nella diagnosi e cura delle patologie articolari e muscolari">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Marco Rossi</h5>
+              <p class="card-text">Specialista in Ortopedia e Traumatologia.</p>
+              <button onclick="apriModaleMedico('rossi')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico ortopedico della Clinica Privata di Torino specializzato nella diagnosi e cura delle patologie articolari e muscolari">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Laura Bianchi</h5>
+              <p class="card-text">Esperta in chirurgia ortopedica mininvasiva.</p>
+              <button onclick="apriModaleMedico('bianchi')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Chirurgo ortopedico della Clinica Privata di Torino esperto in trattamenti riabilitativi e interventi articolari">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Luca Verdi</h5>
+              <p class="card-text">Riabilitazione ortopedica e medicina dello sport.</p>
+              <button onclick="apriModaleMedico('verdi')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- OTORINOLARINGOIATRIA -->
+    <div class="blocco-disciplina" data-disciplina="otorinolaringoiatria">
+      <h3 class="mb-3 mappa sinistra">OTORINO<wbr>LARINGO<wbr>IATRIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card 1  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Medico otorinolaringoiatra della Clinica Privata di Torino specializzato in disturbi di orecchio, naso e gola">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Mario Azzurro</h5>
+              <p class="card-text">Specialista in Disturbi dell’equilibrio e vertigini.</p>
+              <button onclick="apriModaleMedico('azzurro')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 2  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Specialista ORL della Clinica Privata di Torino durante una visita di controllo audiometrico">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Lara Mazza</h5>
+              <p class="card-text">Esperta in Apnee notturne e russamento.</p>
+              <button onclick="apriModaleMedico('mazza')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Dottoressa otorinolaringoiatra della Clinica Privata di Torino esperta in diagnostica e trattamenti respiratori">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Bruno Anselmi</h5>
+              <p class="card-text">Patologie del naso e dei seni paranasali.</p>
+              <button onclick="apriModaleMedico('anselmi')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- NEUROLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="neurologia">
+      <h3 class="mb-3 mappa sinistra">NEUROLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+
+        <!--card1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Neurologo della Clinica Privata di Torino specializzato in disturbi del sistema nervoso e cefalee">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Mario Azzurri</h5>
+              <p class="card-text">Specialista in Epilessia e disturbi convulsivi.</p>
+              <button onclick="apriModaleMedico('azzurri')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Specialista in neurologia della Clinica Privata di Torino durante un consulto diagnostico">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Laura Mori</h5>
+              <p class="card-text">Esperta in Malattie neurodegenerative.</p>
+              <button onclick="apriModaleMedico('mori')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+ <!--card3-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Medico neurologo della Clinica Privata di Torino esperto in prevenzione e cura delle patologie neurodegenerative">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Aldo Bruna</h5>
+              <p class="card-text">Cefalee e emicranie croniche.</p>
+              <button onclick="apriModaleMedico('bruna')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ONCOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="oncologia">
+      <h3 class="mb-3 mappa sinistra">ONCOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Oncologo della Clinica Privata di Torino specializzato in diagnosi precoce e trattamenti personalizzati">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Fabio Sampo</h5>
+              <p class="card-text">Specialista in Tumori del seno.</p>
+              <button onclick="apriModaleMedico('sampo')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--card 2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico oncologo della Clinica Privata di Torino impegnato nel monitoraggio terapeutico dei pazienti">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Maura Luona</h5>
+              <p class="card-text">Esperta in Tumori gastrointestinali.</p>
+              <button onclick="apriModaleMedico('luona')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 3-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Specialista in oncologia della Clinica Privata di Torino dedicato alla prevenzione e al supporto ai pazienti oncologici">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Bruno Cucci</h5>
+              <p class="card-text">Oncologia polmonare.</p>
+              <button onclick="apriModaleMedico('cucci')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- CARDIOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="cardiologia">
+      <h3 class="mb-3 mappa sinistra">CARDIOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Cardiologo della Clinica Privata di Torino specializzato in visite cardiologiche e controllo della pressione">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Paolo Sampi</h5>
+              <p class="card-text">Specialista in Ipertensione arteriosa.</p>
+              <button onclick="apriModaleMedico('sampi')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico cardiologo della Clinica Privata di Torino durante un elettrocardiogramma di routine">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Sandra Messina</h5>
+              <p class="card-text">Esperta in Scompenso cardiaco.</p>
+              <button onclick="apriModaleMedico('messina')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 3  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Specialista in cardiologia della Clinica Privata di Torino esperto in prevenzione e salute cardiovascolare">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Lillo Bodelli</h5>
+              <p class="card-text">Prevenzione cardiovascolare.</p>
+              <button onclick="apriModaleMedico('bodelli')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+    <!-- PEDIATRIA -->
+    <div class="blocco-disciplina" data-disciplina="pediatria">
+      <h3 class="mb-3 mappa sinistra">PEDIATRIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!--card 1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Pediatra della Clinica Privata di Torino specializzato nella crescita e nello sviluppo infantile">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Fabia Veretti</h5>
+              <p class="card-text">Specialista in Controlli di crescita e sviluppo.</p>
+              <button onclick="apriModaleMedico('veretti')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico pediatra della Clinica Privata di Torino durante una visita di controllo per bambini">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Monica Cotta</h5>
+              <p class="card-text">Esperta in Vaccinazioni e prevenzione.</p>
+              <button onclick="apriModaleMedico('cotta')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Specialista in pediatria della Clinica Privata di Torino attento al benessere e alla prevenzione dei più piccoli">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Claudio Sulano</h5>
+              <p class="card-text">Malattie respiratorie pediatriche.</p>
+              <button onclick="apriModaleMedico('sulano')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+    <!-- GINECOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="ginecologia">
+      <h3 class="mb-3 mappa sinistra">GINECOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!-- card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Ginecologa della Clinica Privata di Torino specializzata in salute femminile e prevenzione">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Federico Callo</h5>
+              <p class="card-text">Specialista in Fertilità e PMA (Procreazione Medicalmente Assistita).</p>
+              <button onclick="apriModaleMedico('callo')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!--card 2  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico ginecologo della Clinica Privata di Torino durante una visita di controllo periodica">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Sandra Sularo</h5>
+              <p class="card-text">Esperta in Menopausa e disturbi ormonali.</p>
+              <button onclick="apriModaleMedico('sularo')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- card 3  -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Specialista in ginecologia della Clinica Privata di Torino esperta in diagnosi e benessere della donna">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Massimo Lallo</h5>
+              <p class="card-text">Pap test e prevenzione tumore al collo dell’utero.</p>
+              <button onclick="apriModaleMedico('lallo')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+    <!-- CHIURURGIA PLASTICA -->
+    <div class="blocco-disciplina" data-disciplina="chirurgia-plastica">
+      <h3 class="mb-3 mappa sinistra">CHIURURGIA PLASTICA</h3>
+      <div class="row g-4 mb-5">
+
+        <!-- card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Chirurgo plastico della Clinica Privata di Torino specializzato in medicina estetica e ricostruttiva">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Corrado Bistefanis</h5>
+              <p class="card-text">Specialista in Ricostruzione post-trauma o post-tumore.</p>
+              <button onclick="apriModaleMedico('bistefanis')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico chirurgo estetico della Clinica Privata di Torino durante una consulenza pre-operatoria">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Sara Varetto</h5>
+              <p class="card-text">Esperta in Chirurgia estetica del volto.</p>
+              <button onclick="apriModaleMedico('varetto')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Specialista in chirurgia plastica della Clinica Privata di Torino esperto in interventi estetici e correttivi">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Maria Milo</h5>
+              <p class="card-text">Liposuzione e rimodellamento corporeo.</p>
+              <button onclick="apriModaleMedico('milo')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- DERMATOLOGIA -->
+    <div class="blocco-disciplina" data-disciplina="dermatologia">
+      <h3 class="mb-3 mappa sinistra">DERMATOLOGIA</h3>
+      <div class="row g-4 mb-5">
+
+        <!-- card1-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Dermatologo della Clinica Privata di Torino specializzato in diagnosi e trattamento delle patologie cutanee">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Gian Paolo Ville</h5>
+              <p class="card-text">Specialista in Acne e dermatite seborroica.</p>
+              <button onclick="apriModaleMedico('ville')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- card2-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/MedicoDonna.jpg" class="card-img-top"
+              alt="Medico dermatologo della Clinica Privata di Torino durante una visita di controllo per la pelle">
+            <div class="card-body">
+              <h5 class="card-title">Dr.ssa Giulia Boccovani</h5>
+              <p class="card-text">Esperta in Controllo dei nei e prevenzione melanoma.</p>
+              <button onclick="apriModaleMedico('boccovani')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- card 3-->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow rounded transparent-card">
+            <img src="/assets/img/medicoUomo.jpg" class="card-img-top"
+              alt="Specialista in dermatologia della Clinica Privata di Torino esperto in prevenzione dei tumori cutanei e salute della pelle">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Roberto Ghigliola</h5>
+              <p class="card-text">Psoriasi ed eczema.</p>
+              <button onclick="apriModaleMedico('ghigliola')" class="btn btn-outline-primary">
+                Scopri di più
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!----------------------------------------------------------------------- footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+  <footer class=" text-dark pt-4 ">
+    <div class="container-xl bg-lightblue border-top px-4">
+      <div class="row gy-4 text-center text-md-start">
+
+        <!-- COL 1: SOCIAL -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">SOCIAL</h6>
+          <a href="https://facebook.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-facebook-f me-2"></i> Facebook
+          </a>
+          <a href="https://instagram.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-instagram me-2"></i> Instagram
+          </a>
+          <a href="https://linkedin.com" class="text-decoration-none text-muted d-block footer-link" target="_blank">
+            <i class="fab fa-linkedin me-2"></i> LinkedIn
+          </a>
+          <!-- pulsante condividi-->
+<button id="shareBtn" class="btn btn-outline-primary">
+  <i class="fas fa-share-alt me-2"></i>Condividi
+</button>
+        </div>
+
+        <!-- COL 2: CONTATTI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">CONTATTI</h6>
+          <p class="mb-1">
+            <i class="fas fa-phone-alt text-success me-2"></i>
+            <a href="tel:+390123456789" class="text-muted text-decoration-none footer-link">3923688757</a>
+          </p>
+          <p class="mb-1">
+            <i class="fas fa-envelope text-success me-2"></i>
+            <a href="../index.html#form-prenotazioni" class="text-muted text-decoration-none footer-link">Richiedi
+              informazioni</a>
+          </p>
+        </div>
+
+        <!-- COL 3: LEGALI -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold titfooter">INFORMAZIONI</h6>
+          <p class="mb-1">P.IVA 12345678901</p>
+          <a href="/html/noteLegalii.html" class="text-muted text-decoration-none d-block footer-link" target="_blank">Note
+            legali</a>
+          <a href="/html/privacyEcookies.html" class="text-muted text-decoration-none d-block footer-link" target="_blank">Privacy & Cookie</a>
+           <p class="text-center text-muted small mt-4">
+            ⚠️ Questo sito è una demo realizzata a scopo didattico.
+            I contenuti, nomi e indirizzi sono puramente fittizi.
+          </p>
+        </div>
+
+        <!-- COL 4: LOGO & COPYRIGHT -->
+        <div class="col-12 col-md-3 text-md-end text-center">
+          <a class="navbar-brand sfondo d-inline-block mb-2" href="/assets/img/clinica.png" target="_blank">
+            <img src="/assets/img/logoClinica.png"
+              alt="Logo della Clinica Privata di Torino, centro medico specializzato in visite e prenotazioni online"
+              width="100">
+          </a>
+          <p class="small text-muted">© 2025 Clinica Privata. Tutti i diritti riservati.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!----------------------------------------------------------------------- fine footer--------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+  <!-- ------------------------------------------------------------------------------------------------MODALE presentazione UNICA PER TUTTI I MEDICI -->
+  <div class="modal fade" id="modaleMedico" tabindex="-1" aria-labelledby="titoloMedico" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- HEADER -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="titoloMedico">Nome Medico</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+
+        <!-- BODY -->
+        <div class="modal-body">
+          <div class="container">
+            <div class="row mb-4">
+              <!-- FOTO -->
+              <div class="col-md-4 text-center">
+                <img id="fotoMedico" src="" class="img-fluid rounded shadow-sm" alt="Foto medico">
+              </div>
+              <!-- DESCRIZIONE -->
+              <div class="col-md-8">
+                <p id="descrizioneMedico" class="lead"></p>
+              </div>
+            </div>
+
+            <!-- PRENOTA -->
+            <div class="row mb-4">
+              <div class="col text-center">
+                <a id="linkPrenota" href="#" class="btn btn-success btn-lg">Prenota una visita</a>
+              </div>
+            </div>
+
+            <!-- CONTATTI -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <h6 class="fw-bold">Contatti</h6>
+                <p class="mb-1"><strong>Email:</strong> <span id="emailMedico">medico@esempio.it</span></p>
+                <p class="mb-1"><strong>Telefono:</strong> <span id="telefonoMedico">+39 000 000000</span></p>
+                <p class="mb-0"><strong>Riceve:</strong> <span id="ricevimentoMedico">Giorni da definire</span></p>
+              </div>
+
+              <!-- FORM -->
+              <div class="col-md-6">
+                <h6 class="fw-bold">Richiedi informazioni</h6>
+                <form action="https://formspree.io/f/xpwylono" method="POST" target="_blank">
+                  <input type="hidden" name="_subject" value="Richiesta informazioni da sito">
+                  <div class="mb-2">
+                    <input type="text" name="nome" class="form-control" placeholder="Il tuo nome" required>
+                  </div>
+                  <div class="mb-2">
+                    <input type="email" name="email" class="form-control" placeholder="La tua email" required>
+                  </div>
+                  <div class="mb-2">
+                    <textarea name="messaggio" class="form-control" rows="3" placeholder="Messaggio"
+                      required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary btn-sm">Invia richiesta</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="modal-footer justify-content-between small text-muted">
+          <div>
+            <span>Mail: info@clinic.it</span> ·
+            <span>P. IVA 1234567890</span> ·
+            <a href="/html/noteLegalii.html" target="_blank">Note legali</a>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Chiudi</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!----------------------------------------------------------------------------------------------------------fine modale presentazione unicaa-->
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Script JS personalizzato -->
+  <script src="/js/index.js"></script>
+
+
+  <!-- script cookies iubenda -->
+  <script type="text/javascript"
+    src="https://embeds.iubenda.com/widgets/7a470f35-9785-4723-8fd0-7e14a683250d.js" async></script>
+
+
+</body>
+
+</html>
