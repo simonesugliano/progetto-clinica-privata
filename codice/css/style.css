@@ -48,7 +48,7 @@ body.dark-mode {
 
 /*definisco larghezza massima schermo in modo che se si scrolla la rotellina non si rompe il layout*/
 .container-xl {
-  max-width: 2560px;
+  max-width: 2560px;/*sadatto a schermi 4k e perfetto anvhe dezoomando o su smartphone*/
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -331,4 +331,5 @@ font-size:1em;/*riduco font per farlo rimanere leggibile*/
 .content-wrapper  {
     padding: 0 !important; /* riduce il padding interno */
   }
+
 
