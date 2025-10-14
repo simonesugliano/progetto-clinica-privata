@@ -308,6 +308,8 @@ L’obiettivo iniziale — creare un sito per un poliambulatorio moderno, access
 - **Architettura visiva:** creata ua **mappa completa del flusso del sito** per visualizzare l’interazione tra sezioni, modali e sistema di prenotazione, utile per future espansioni o refactoring.
 
 - **Layout e usabilità** sviluppati per guidare l’utente nella selezione del medico, unendo chiarezza funzionale e cura estetica in ogni dettaglio.
+
+- **layout completamente responsive** , con zoom controllato per adattarsi perfettamente a schermi fino al 4K e mantenere un’eccellente leggibilità anche sotto i 320 px.
 ---
 
 ### Tecniche e strumenti impiegati
