@@ -311,6 +311,8 @@ L’obiettivo iniziale — creare un sito per un poliambulatorio moderno, access
 - **AOS.js** per animazioni allo scroll  
 - **JSON-LD**, **meta tag**, **alt text** e **heading structure** per la SEO  
 - **Immagini ottimizzate WebP/AVIF** e **lazy loading** per performance elevate  
+- **Iubenda** per la gestione legale di **cookie, privacy policy e termini di servizio**
+
 
 ---
 
