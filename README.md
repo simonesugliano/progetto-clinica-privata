@@ -10,7 +10,12 @@
 [![Prestazioni](https://img.shields.io/badge/Prestazioni-Analisi%20PageSpeed%20%7C%20Hosting%20Altervista-FF9800?style=for-the-badge)](./INFOprestazioni.md)
 
 
-[![VISUALIZZA IL SITO](https://img.shields.io/badge/VISUALIZZA_IL_SITO-LIVE_DEMO-E53935?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://democlinicaprivata.altervista.org/)
+<p align="center">
+  <a href="https://democlinicaprivata.altervista.org/">
+    <img src="https://img.shields.io/badge/VISUALIZZA_IL_SITO-LIVE_DEMO-E53935?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Visualizza il sito">
+  </a>
+</p>
+
 
 
 
