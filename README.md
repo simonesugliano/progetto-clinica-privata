@@ -302,7 +302,7 @@ L’obiettivo iniziale — creare un sito per un poliambulatorio moderno, access
 - **Layout e usabilità** sviluppati per guidare l’utente nella selezione del medico, unendo chiarezza funzionale e cura estetica in ogni dettaglio.
 ---
 
-### 🧩 Tecniche e strumenti impiegati
+### Tecniche e strumenti impiegati
 - **HTML5**, **CSS3**, **JavaScript (ES6)**  
 - **Bootstrap 5** per layout responsive  
 - **Firebase Realtime Database** per la gestione delle prenotazioni  
@@ -314,7 +314,7 @@ L’obiettivo iniziale — creare un sito per un poliambulatorio moderno, access
 
 ---
 
-### 🔚 Stato finale
+### Stato finale
 Il sito è stato **pubblicato online**, testato e validato in tutte le sue parti.  
 Il codice è stato **pulito, ordinato e commentato**, pronto per il caricamento definitivo su GitHub.  
 Con questo aggiornamento, il progetto **Clinica Privata** può considerarsi ufficialmente **completato e documentato** in ogni sua parte.
