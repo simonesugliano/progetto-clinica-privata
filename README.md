@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://democlinicaprivata.altervista.org/">
-    <img src="https://img.shields.io/badge/🌐_VISUALIZZA_IL_SITO-ff5fa2?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visualizza il sito" style:"font-size:88px">
+    <img src="https://img.shields.io/badge/🌐_VISUALIZZA_IL_SITO-ff5fa2?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visualizza il sito" style="font-size:88">
   </a>
 </p>
 
