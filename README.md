@@ -1,3 +1,13 @@
+<p align="center">
+  <a href="https://democlinicaprivata.altervista.org/">
+    <img src="https://img.shields.io/badge/VISUALIZZA_IL_SITO-LIVE_DEMO-E53935?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Visualizza il sito">
+  </a>
+</p>
+<br>
+<br>
+<br>
+
+
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](./INFOhtml.md)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](./INFOcss.md)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](./INFOjs.md)
@@ -10,11 +20,6 @@
 [![Prestazioni](https://img.shields.io/badge/Prestazioni-Analisi%20PageSpeed%20%7C%20Hosting%20Altervista-FF9800?style=for-the-badge)](./INFOprestazioni.md)
 
 
-<p align="center">
-  <a href="https://democlinicaprivata.altervista.org/">
-    <img src="https://img.shields.io/badge/VISUALIZZA_IL_SITO-LIVE_DEMO-E53935?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Visualizza il sito">
-  </a>
-</p>
 
 
 
