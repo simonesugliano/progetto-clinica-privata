@@ -17,7 +17,7 @@
 
 Demo di sito web multipagina per un poliambulatorio privato, con sistema di prenotazione visite basato su `localStorage`.  
 
-<u> **(Aggiornamento successivo)**
+<u> **(Aggiornamento successivo)** </u>
 In una fase più avanzata del progetto, il sistema di gestione delle prenotazioni è stato migrato da localStorage a Firebase Realtime Database, per garantire scalabilità, affidabilità e sincronizzazione in tempo reale.
 Questa evoluzione ha trasformato il progetto da demo locale a applicazione web completa, con dati persistenti e interfaccia dinamica. </u>
 
